@@ -30,7 +30,7 @@ export default function FilterBar({ active, onSelect }) {
             className={`flex-shrink-0 px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all border ${
               isSelected
                 ? 'bg-terracotta text-white border-terracotta shadow-md scale-105'
-                : 'bg-white text-charcoal border-gray-200 hover:border-terracotta/50'
+                : 'bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-200 border-gray-200 dark:border-neutral-800 hover:border-terracotta/50'
             }`}
           >
             {f.label}

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Clock, Users, ChevronRight, Bookmark } from 'lucide-react';
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
+import { translateTitle } from '../../i18n/recipeTranslations';
 import { toggleSaveRecipe } from '../../api';
 
 export default function RecipeCard({ recipe, isSavedDefault = false }) {
@@ -80,7 +81,7 @@ export default function RecipeCard({ recipe, isSavedDefault = false }) {
         {/* Quick Info Overlay */}
         <div className="absolute bottom-3 left-3 right-3 text-white pointer-events-none">
           <h3 className="font-display text-lg font-bold leading-tight drop-shadow-md">
-            {recipe.title}
+            {translateTitle(recipe.title, language)}
           </h3>
           <div className="flex items-center gap-4 mt-1.5 text-xs text-white/90 font-medium">
             <span className="flex items-center gap-1 drop-shadow">

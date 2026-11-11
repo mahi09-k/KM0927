@@ -4,6 +4,7 @@ import { useSwipe } from '../../hooks/useSwipe';
 import { useTimer } from '../../hooks/useTimer';
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
+import { translateInstruction } from '../../i18n/recipeTranslations';
 
 function StepCard({ step, total, onPrev, onNext }) {
   const { language } = useLanguageStore();
@@ -35,7 +36,7 @@ function StepCard({ step, total, onPrev, onNext }) {
 
       <div className="flex-1 flex flex-col justify-center my-auto py-2">
         <p className="font-display text-2xl font-semibold text-charcoal dark:text-neutral-100 leading-relaxed">
-          {step.instruction}
+          {translateInstruction(step.instruction, language)}
         </p>
       </div>
 
@@ -112,6 +113,8 @@ function StepCard({ step, total, onPrev, onNext }) {
 }
 
 export default function CookMode({ steps, onClose }) {
+  const { language } = useLanguageStore();
+  const t = translations[language] || translations.en;
   const [currentIndex, setCurrentIndex] = useState(0);
   const goNext = () => setCurrentIndex((i) => Math.min(i + 1, steps.length - 1));
   const goPrev = () => setCurrentIndex((i) => Math.max(i - 1, 0));
@@ -122,7 +125,7 @@ export default function CookMode({ steps, onClose }) {
         <button
           onClick={onClose}
           className="p-2.5 rounded-full bg-white dark:bg-[#1C1C1A] border border-gray-200 dark:border-neutral-800 text-charcoal dark:text-neutral-200 hover:bg-softgray dark:hover:bg-neutral-800 transition shadow-sm"
-          aria-label="Close Cook Mode"
+          aria-label={t.cookMode?.close || 'Close Cook Mode'}
         >
           <X size={20} />
         </button>

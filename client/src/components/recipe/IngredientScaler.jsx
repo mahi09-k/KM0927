@@ -1,5 +1,6 @@
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
+import { translateIngredient } from '../../i18n/recipeTranslations';
 
 export default function IngredientScaler({ ingredients, baseServings, currentServings }) {
   const { language } = useLanguageStore();
@@ -23,8 +24,8 @@ export default function IngredientScaler({ ingredients, baseServings, currentSer
   return (
     <ul className="space-y-2">
       {ingredients.map((ing) => (
-        <li key={ing.id} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
-          <span className="text-charcoal font-medium text-sm capitalize">{ing.name}</span>
+        <li key={ing.id} className="flex items-center justify-between py-2 border-b border-gray-100 dark:border-neutral-800 last:border-0">
+          <span className="text-charcoal dark:text-neutral-200 font-medium text-sm capitalize">{translateIngredient(ing.name, language)}</span>
           <div className="flex items-center gap-2">
             <span className="text-sm font-semibold text-gray-700">
               {formatQty(ing.base_quantity)} {ing.unit}

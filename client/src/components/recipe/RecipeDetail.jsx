@@ -5,6 +5,7 @@ import CookMode from './CookMode';
 import LanguageSelector from '../common/LanguageSelector';
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
+import { translateInstruction, translateTitle } from '../../i18n/recipeTranslations';
 import { toggleSaveRecipe, fetchUserProfile } from '../../api';
 
 export default function RecipeDetail({ recipe }) {
@@ -94,7 +95,7 @@ export default function RecipeDetail({ recipe }) {
             </span>
           </div>
           <h1 className="font-display text-2xl font-bold leading-tight drop-shadow">
-            {recipe.title}
+            {translateTitle(recipe.title, language)}
           </h1>
           <div className="flex gap-4 mt-2 text-xs font-medium text-white/90">
             <span className="flex items-center gap-1">
@@ -154,7 +155,7 @@ export default function RecipeDetail({ recipe }) {
                   {toBengaliNumber(step.step_number, language)}
                 </span>
                 <div className="flex-1">
-                  <p className="text-xs text-charcoal dark:text-neutral-200 leading-relaxed">{step.instruction}</p>
+                  <p className="text-xs text-charcoal dark:text-neutral-200 leading-relaxed">{translateInstruction(step.instruction, language)}</p>
                   {step.timer_seconds ? (
                     <span className="inline-flex items-center gap-1 mt-1 text-[10px] text-terracotta font-semibold">
                       <Clock size={10} /> {t.recipeDetail?.timer || 'Timer'}: {toBengaliNumber(Math.floor(step.timer_seconds / 60), language)} {t.recipeCard?.min || 'min'}

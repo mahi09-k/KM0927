@@ -17,6 +17,12 @@ const getAllRecipes = async (req, res, next) => {
       params.push(req.query.category);
     }
 
+    if (req.query.search) {
+      const q = `%${req.query.search.trim().toLowerCase()}%`;
+      conditions.push('(LOWER(title) LIKE ? OR LOWER(description) LIKE ? OR LOWER(cuisine) LIKE ? OR LOWER(category) LIKE ?)');
+      params.push(q, q, q, q);
+    }
+
     if (req.query.filter === 'under30') {
       conditions.push('(prep_time + cook_time) <= 30');
     } else if (req.query.filter === 'vegetarian') {
@@ -40,6 +46,16 @@ const getAllRecipes = async (req, res, next) => {
     if (req.query.category) {
       recipes = recipes.filter(
         r => (r.category || '').toLowerCase() === req.query.category.toLowerCase()
+      );
+    }
+    if (req.query.search) {
+      const q = req.query.search.trim().toLowerCase();
+      recipes = recipes.filter(r =>
+        (r.title || '').toLowerCase().includes(q) ||
+        (r.description || '').toLowerCase().includes(q) ||
+        (r.cuisine || '').toLowerCase().includes(q) ||
+        (r.category || '').toLowerCase().includes(q) ||
+        (r.ingredients || []).some(ing => (ing.name || '').toLowerCase().includes(q))
       );
     }
     if (req.query.filter === 'under30') {
