@@ -1,0 +1,21 @@
+{
+  "name": "sizzlespoon",
+  "version": "2.0.0",
+  "private": true,
+  "description": "SizzleSpoon - Premium Mobile-First Recipe & Meal Planning Web Application",
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "node server/index.js",
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev"
+  },
+  "keywords": [
+    "recipes",
+    "meal-planner",
+    "bangladeshi-cuisine",
+    "indian-cuisine",
+    "western-cuisine"
+  ],
+  "author": "SizzleSpoon",
+  "license": "MIT"
+}

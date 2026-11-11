@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html.dark, body.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #FAFAF8;
+    color: #1C1C1A;
+    font-family: 'Inter', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', 'Hind Siliguri', Georgia, serif;
+  }
+}
+
+/* Instant Full Dark Mode Fallback & Overrides */
+html.dark,
+html.dark body,
+body.dark {
+  background-color: #121211 !important;
+  color: #F5F5F5 !important;
+}
+
+html.dark .bg-cream {
+  background-color: #151514 !important;
+}
+
+html.dark .bg-white {
+  background-color: #1C1C1A !important;
+}
+
+html.dark .bg-softgray {
+  background-color: #262624 !important;
+}
+
+html.dark .text-charcoal {
+  color: #F5F5F5 !important;
+}
+
+html.dark .border-black\/5,
+html.dark .border-gray-100,
+html.dark .border-gray-200 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
