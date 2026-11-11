@@ -66,7 +66,7 @@ export default function AuthModal({ onAuthSuccess }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fade-in">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fade-in">
       <div
         className="w-full max-w-sm bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-100 rounded-3xl p-6 shadow-2xl border border-black/10 dark:border-white/10 relative overflow-hidden"
         onClick={(e) => e.stopPropagation()}

@@ -16,7 +16,7 @@ export default function BottomNav() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-shell bg-white/95 dark:bg-[#1C1C1A]/95 backdrop-blur border-t border-gray-100 dark:border-neutral-800 z-50 transition-colors">
+    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-shell bg-white/95 dark:bg-[#1C1C1A]/95 backdrop-blur border-t border-gray-100 dark:border-neutral-800 z-40 transition-colors">
       <div className="flex justify-around items-center h-16">
         {tabs.map(({ to, icon: Icon, label }) => (
           <NavLink
