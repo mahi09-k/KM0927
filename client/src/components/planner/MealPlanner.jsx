@@ -3,6 +3,7 @@ import { Plus, X } from 'lucide-react';
 import { fetchMealPlan, removeMealPlan, fetchRecipes, addMealPlan } from '../../api';
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
+import { translateTitle, translateCategory } from '../../i18n/recipeTranslations';
 
 function getCurrentWeek() {
   const now = new Date();
@@ -117,7 +118,7 @@ export default function MealPlanner() {
                       <div className="relative group">
                         <img src={slot.thumbnail_url} alt="" className="w-full h-10 object-cover rounded-lg" />
                         <p className="text-[9px] text-charcoal leading-tight mt-1 font-semibold line-clamp-2">
-                          {slot.title}
+                          {translateTitle(slot.title, language)}
                         </p>
                         <button
                           onClick={() => handleRemove(slot.id)}
@@ -162,9 +163,9 @@ export default function MealPlanner() {
                 >
                   <img src={r.thumbnail_url} alt="" className="w-14 h-14 rounded-xl object-cover flex-shrink-0" />
                   <div className="flex-1">
-                    <p className="font-bold text-xs text-charcoal leading-snug">{r.title}</p>
+                    <p className="font-bold text-xs text-charcoal leading-snug">{translateTitle(r.title, language)}</p>
                     <p className="text-[10px] text-gray-500 capitalize mt-1">
-                      {r.category} · {toBengaliNumber((r.prep_time || 0) + (r.cook_time || 0), language)} {t.recipeCard.min}
+                      {translateCategory(r.category, language)} · {toBengaliNumber((r.prep_time || 0) + (r.cook_time || 0), language)} {t.recipeCard.min}
                     </p>
                   </div>
                 </button>

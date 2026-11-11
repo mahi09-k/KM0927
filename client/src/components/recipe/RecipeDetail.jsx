@@ -5,7 +5,7 @@ import CookMode from './CookMode';
 import LanguageSelector from '../common/LanguageSelector';
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
-import { translateInstruction, translateTitle } from '../../i18n/recipeTranslations';
+import { translateInstruction, translateTitle, translateDescription, translateCategory, translateCuisine } from '../../i18n/recipeTranslations';
 import { toggleSaveRecipe, fetchUserProfile } from '../../api';
 
 export default function RecipeDetail({ recipe }) {
@@ -87,11 +87,11 @@ export default function RecipeDetail({ recipe }) {
           <div className="flex items-center gap-2 mb-2">
             {recipe.cuisine && (
               <span className={`${badge.bg} text-white text-[11px] font-bold tracking-wider px-3 py-1 rounded-full shadow`}>
-                {badge.label}
+                {translateCuisine(recipe.cuisine, language)}
               </span>
             )}
             <span className="text-[11px] font-semibold tracking-wide bg-white/20 backdrop-blur px-3 py-1 rounded-full capitalize">
-              {recipe.category}
+              {translateCategory(recipe.category, language)}
             </span>
           </div>
           <h1 className="font-display text-2xl font-bold leading-tight drop-shadow">
@@ -109,7 +109,7 @@ export default function RecipeDetail({ recipe }) {
       </div>
 
       <div className="px-5 mt-5">
-        <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">{recipe.description}</p>
+        <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">{translateDescription(recipe.description, language)}</p>
 
         {/* Interactive Scaler Header */}
         <div className="flex items-center justify-between mt-6 mb-4">

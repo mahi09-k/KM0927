@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Bookmark, ChefHat, Calendar, ShoppingCart, Clock, ArrowRight, Trash2 } from 'lucide-react';
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
+import { translateTitle, translateCuisine } from '../../i18n/recipeTranslations';
 
 export default function ActivityTab({
   stats,
@@ -125,7 +126,7 @@ export default function ActivityTab({
                 to="/"
                 className="inline-flex items-center gap-1.5 mt-4 px-4 py-2 bg-terracotta text-white rounded-xl text-xs font-medium hover:bg-[#D4471C] transition-colors"
               >
-                <span>Explore Recipes</span>
+                <span>{language === 'bn' ? 'রেসিপি খুঁজুন' : 'Explore Recipes'}</span>
                 <ArrowRight size={13} />
               </Link>
             </div>
@@ -147,20 +148,20 @@ export default function ActivityTab({
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5 mb-1">
                       <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-softgray dark:bg-neutral-800 text-charcoal dark:text-neutral-300">
-                        {recipe.cuisine}
+                        {translateCuisine(recipe.cuisine, language)}
                       </span>
                     </div>
                     <Link
                       to={`/recipe/${recipe.id}`}
                       className="text-xs font-bold text-charcoal dark:text-white hover:text-terracotta line-clamp-1 transition-colors"
                     >
-                      {recipe.title}
+                      {translateTitle(recipe.title, language)}
                     </Link>
                     <div className="flex items-center gap-2 text-[11px] text-gray-400 mt-1">
                       <span className="flex items-center gap-1">
                         <Clock size={11} />
                         <span>
-                          {toBengaliNumber((recipe.prep_time || 0) + (recipe.cook_time || 0), language)} min
+                          {toBengaliNumber((recipe.prep_time || 0) + (recipe.cook_time || 0), language)} {language === 'bn' ? 'মি.' : 'min'}
                         </span>
                       </span>
                       <span>•</span>

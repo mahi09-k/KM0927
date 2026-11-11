@@ -1,4 +1,487 @@
-// Comprehensive Bengali Translations for Recipes & Steps
+// Auto-generated comprehensive bilingual dictionary (English & Bangla)
+// Ensures 100% pure English when language is 'en', and 100% pure Bangla when language is 'bn'.
+
+export const ingredientTranslations = {
+  "mutton pieces": "খাসির মাংসের টুকরো",
+  "chinigura rice": "চিনিগুঁড়া চাল",
+  "potatoes halved": "অর্ধেক করা আলু",
+  "ghee": "ঘি",
+  "plain yogurt": "টকদই",
+  "fried onions beresta": "পেঁয়াজ বেরেস্তা",
+  "shahi garam masala": "শাহী গরম মশলা",
+  "saffron milk": "জাফরান-দুধ",
+  "alu bukhara prunes": "আলুবোখারা",
+  "kewra water": "কেওড়া জল",
+  "beef brisket & shank": "গরুর সিনার মাংস",
+  "mustard oil": "সরিষার তেল",
+  "sliced onions": "কুচানো পেঁয়াজ",
+  "ginger paste": "আদা বাটা",
+  "garlic paste": "রসুন বাটা",
+  "radhuni spice powder": "রাঁধুনি গুঁড়া মশলা",
+  "black cardamom & cloves": "বড় এলাচ ও লবঙ্গ",
+  "ilish hilsa steaks": "ইলিশ মাছের টুকরো",
+  "yellow mustard seeds": "হলুদ সরিষা দানা",
+  "black mustard seeds": "কালো সরিষা দানা",
+  "green chilies slit": "চেরা কাঁচামরিচ",
+  "pure mustard oil": "খাঁটি সরিষার তেল",
+  "turmeric powder": "হলুদ গুঁড়া",
+  "kalonji nigella seeds": "কালোজিরা",
+  "golda chingri jumbo prawns": "গলদা চিংড়ি",
+  "thick coconut milk": "ঘন নারকেলের দুধ",
+  "onion paste": "পেঁয়াজ বাটা",
+  "green cardamom & cinnamon": "সবুজ এলাচ ও দারুচিনি",
+  "green chilies": "কাঁচামরিচ",
+  "chicken whole leg cut in half": "মুরগির লেগ পিস",
+  "kalijira rice": "কালিজিরার সুগন্ধি চাল",
+  "sour yogurt": "টকদই",
+  "fried onion beresta": "পেঁয়াজ বেরেস্তা",
+  "alu bukhara": "আলুবোখারা",
+  "mita attar & kewra": "মিঠা আতর ও কেওড়া জল",
+  "ginger garlic paste": "আদা-রসুন বাটা",
+  "beef cubes with bone": "হাড়সহ গরুর মাংসের টুকরো",
+  "onions chopped": "কুচানো পেঁয়াজ",
+  "mezbeni spice mix": "মেজবানি স্পেশাল মশলা",
+  "poppy seed paste posto": "পোস্ত বাটা",
+  "dry red chilies": "শুকনো লাল মরিচ",
+  "beef boneless small cubes": "হাড়ছাড়া গরুর মাংসের ছোট কিউব",
+  "tehari garam masala": "তেহারী গরম মশলা",
+  "rui carp steaks": "রুই মাছের টুকরো",
+  "cauliflower florets": "ফুলকপির টুকরো",
+  "potatoes wedged": "আলুর ফালি",
+  "pachan paanch phoron": "পাঁচফোড়ন",
+  "cumin coriander paste": "জিরা-ধনে বাটা",
+  "roasted yellow moong dal": "ভাজা মুগ ডাল",
+  "eggplant round slices": "বেগুনের চাকা",
+  "potatoes boiled": "সেদ্ধ আলু",
+  "dry red chilies fried": "ভাজা শুকনো লাল মরিচ",
+  "finely sliced shallots": "ছোট পেঁয়াজ কুচি",
+  "chopped fresh coriander": "তাজা ধনেপাতা কুচি",
+  "salt": "লবণ",
+  "large eggplant": "বড় গোল বেগুন",
+  "garlic cloves inserted": "রসুনের কোয়া",
+  "green chilies roasted": "পোড়ানো কাঁচামরিচ",
+  "chopped red onion": "কুচানো লাল পেঁয়াজ",
+  "hard boiled eggs": "সেদ্ধ ডিম",
+  "chopped tomatoes": "টমেটো কুচি",
+  "roasted cumin powder": "ভাজা জিরার গুঁড়া",
+  "ilish steaks": "ইলিশ মাছের টুকরো",
+  "banana leaves": "কলাপাতার টুকরো",
+  "mustard & poppy paste": "সরিষা ও পোস্ত বাটা",
+  "grated fresh coconut": "তাজা কোরানো নারকেল",
+  "raw mustard oil": "কাঁচা সরিষার তেল",
+  "mutton pieces with marrow": "নলিসহ খাসির মাংসের টুকরো",
+  "sour yogurt whisked": "ফেটিয়ে নেওয়া টকদই",
+  "cashew & poppy seed paste": "কাজু ও পোস্ত বাটা",
+  "whole dried red chilies": "আস্ত শুকনো লাল মরিচ",
+  "kewra & mita attar": "কেওড়া জল ও মিঠা আতর",
+  "chitol fish scraped flesh": "চিতল মাছের পেটি ও কিমা",
+  "boiled potato mashed": "চটকানো সেদ্ধ আলু",
+  "garam masala": "গরম মশলা গুঁড়া",
+  "pabda fish whole cleaned": "পরিষ্কার করা গোটা পাবদা মাছ",
+  "turmeric & red chili powder": "হলুদ ও লাল মরিচ গুঁড়া",
+  "bottle gourd julienned": "কুচানো কচি লাউ",
+  "small river shrimp": "ছোট নদীর দেশি চিংড়ি",
+  "paanch phoron": "পাঁচফোড়ন",
+  "fresh coriander chopped": "কুচানো তাজা ধনেপাতা",
+  "red lentils masoor dal soaked": "ভেজানো মসুর ডাল",
+  "chopped green chilies": "কাঁচামরিচ কুচি",
+  "oil for frying": "ভাজার জন্য তেল",
+  "full cream milk": "ফুল ক্রিম গরুর দুধ",
+  "date palm jaggery or sugar": "খেজুরের গুড় বা চিনি",
+  "hung yogurt starter": "পানি ঝরানো টকদইয়ের ছাঁচ",
+  "crushed green cardamom": "থেঁতো করা সবুজ এলাচ",
+  "rice flour": "চালের গুঁড়া",
+  "semolina suji": "সুজি",
+  "milk kheer or mawa filling": "দুধের ক্ষীর বা মাওয়া পুর",
+  "date palm jaggery": "পাটালি খেজুরের গুড়",
+  "ghee for greasing": "তাওয়ায় দেওয়ার জন্য ঘি",
+  "main base ingredient": "প্রধান রান্নার উপাদান",
+  "turmeric & cumin": "হলুদ ও জিরা গুঁড়া",
+  "chopped onions": "কুচানো পেঁয়াজ",
+  "boneless chicken thighs": "হাড়ছাড়া মুরগির মাংস",
+  "butter unsalted": "আনসল্টেড মাখন",
+  "heavy cream": "ঘন হেভি ক্রিম",
+  "tomato puree": "টমেটো পিউরি",
+  "cashew nuts soaked": "ভেজানো কাজুবাদাম",
+  "kasuri methi dried fenugreek": "কসুরি মেথি পাতা",
+  "kashmiri red chili powder": "কাশ্মীরি লাল মরিচ গুঁড়া",
+  "mutton bone-in": "হাড়সহ খাসির মাংস",
+  "aged basmati rice": "পুরোনো সুগন্ধি বাসমতী চাল",
+  "pure ghee": "খাঁটি গাওয়া ঘি",
+  "thick yogurt": "ঘন টকদই",
+  "fresh mint & coriander": "তাজা পুদিনা ও ধনেপাতা",
+  "saffron soaked in warm milk": "দুধে ভেজানো জাফরান",
+  "biryani potli spices": "বিরিয়ানির পটলি মশলা",
+  "fried brown onions": "পেঁয়াজ বেরেস্তা",
+  "paneer cottage cheese cubes": "পনিরের কিউব",
+  "butter": "মাখন",
+  "ripe tomatoes pureed": "পাকা টমেটোর পিউরি",
+  "cashew paste": "কাজুবাদাম বাটা",
+  "black urad dal whole": "আস্ত কালো মাষকলাই ডাল",
+  "rajma red kidney beans": "লাল রাজমা বিন্স",
+  "salted butter": "সল্টেড মাখন",
+  "heavy fresh cream": "তাজা ঘন ক্রিম",
+  "kashmiri chili powder": "কাশ্মীরি মরিচ গুঁড়া",
+  "fresh spinach palak leaves": "তাজা পালংশাক",
+  "paneer cubes": "পনিরের কিউব",
+  "garlic minced": "কুচানো রসুন",
+  "white chickpeas kabuli chana": "কাবলি ছোলা",
+  "anardana pomegranate seed powder": "আনারদানা ডালিম বীজ গুঁড়া",
+  "tea bag for color": "গাঢ় রঙের জন্য টি-ব্যাগ",
+  "chana masala spice blend": "চানা মশলা ব্লেন্ড",
+  "mutton lamb shoulder pieces": "খাসির রানের মাংস",
+  "whisked yogurt": "ফেটিয়ে নেওয়া দই",
+  "fennel powder saunf": "মৌরি গুঁড়া",
+  "dry ginger powder soonth": "শুকনো আদা গুঁড়া (শুঁট)",
+  "kashmiri chili paste": "কাশ্মীরি মরিচের পেস্ট",
+  "kingfish or pomfret steaks": "রূপচাঁদা বা সুরমাই মাছের টুকরো",
+  "fresh grated coconut": "তাজা কোরানো নারকেল",
+  "dried kokum petals": "শুকনো কোকুম পাপড়ি",
+  "kashmiri dried chilies": "কাশ্মীরি শুকনো লাল মরিচ",
+  "coriander seeds": "গোটা ধনে দানা",
+  "coconut oil": "নারকেল তেল",
+  "bone-in chicken": "হাড়সহ মুরগির মাংস",
+  "black peppercorns": "আস্ত গোলমরিচ",
+  "star anise & stone flower": "স্টার অ্যানিস ও স্টোন ফ্লাওয়ার",
+  "fresh curry leaves": "তাজা কারিপাতা",
+  "shallots sambar onions": "ছোট সাম্বার পেঁয়াজ",
+  "sesame gingelly oil": "খাঁটি তিলের তেল",
+  "all purpose flour maida": "ময়দা",
+  "potatoes boiled and diced": "সেদ্ধ কিউব করা আলু",
+  "green peas": "সবুজ মটরশুঁটি",
+  "ajwain carom seeds": "জোয়ান",
+  "ghee for dough": "ময়ান দেওয়ার জন্য ঘি",
+  "oil for deep frying": "ডুবো তেলে ভাজার তেল",
+  "main ingredient": "প্রধান উপাদান",
+  "ghee or oil": "ঘি অথবা তেল",
+  "spices and salt": "মশলাপাতি ও লবণ",
+  "penne pasta": "পেন্নে পাস্তা",
+  "garlic cloves minced": "মিহি কুচানো রসুন",
+  "sun-dried tomatoes": "সান-ড্রায়েড টমেটো",
+  "baby spinach": "বেবি পালংশাক",
+  "parmesan cheese freshly grated": "গ্রেট করা পারমেসান চিজ",
+  "extra virgin olive oil": "এক্সট্রা ভার্জিন অলিভ অয়েল",
+  "Italian dried herbs": "ইতালিয়ান ড্রাই হার্বস",
+  "salmon fillets skin-on": "স্যামন মাছের ফিলে",
+  "pure honey": "খাঁটি মধু",
+  "fresh garlic minced": "তাজা মিহি কুচানো রসুন",
+  "low sodium soy sauce": "সয়া সস",
+  "fresh lemon juice": "তাজা লেবুর রস",
+  "olive oil": "অলিভ অয়েল",
+  "chili flakes": "চিলি ফ্লেক্স",
+  "spaghetti bronze die": "স্প্যাগেটি পাস্তা",
+  "guanciale cured pork jowl": "গুয়াঞ্চালে বা ক্রিস্পি বেকন",
+  "egg yolks large": "বড় ডিমের কুসুম",
+  "pecorino romano grated": "পেকোরিনো রোমানো চিজ",
+  "coarsely cracked black pepper": "ভাঙ্গা কালো গোলমরিচ",
+  "chuck roast beef cubes": "গরুর মাংসের বড় রোস্ট কিউব",
+  "bacon lardons": "বেকন কুচি",
+  "dry red wine Pinot Noir": "রেড ওয়াইন / রেড ব্রথ",
+  "beef bone broth": "গরুর হাড়ের ব্রথ স্যুপ",
+  "pearl onions peeled": "ছোলা ছোট মুক্তা পেঁয়াজ",
+  "cremini mushrooms quartered": "ক্রিমিনি মাশরুম",
+  "carrots sliced thick": "মোটা গোল করে কাটা গাজর",
+  "prime ribeye steak 1.5 inch": "প্রাইম রিবআই স্টেক",
+  "unsalted butter": "আনসল্টেড মাখন",
+  "fresh rosemary & thyme": "তাজা রোজমেরি ও থাইম",
+  "garlic cloves smashed": "থেঁতো করা রসুনের কোয়া",
+  "kosher salt & black pepper": "লবণ ও কালো গোলমরিচ",
+  "yellow onions thinly sliced": "পাতলা স্লাইস করা পেঁয়াজ",
+  "beef stock rich": "ঘন বিফ স্টক",
+  "dry white wine": "হোয়াইট ওয়াইন / ভেজিটেবল ব্রথ",
+  "French baguette sliced": "স্লাইস করা ফ্রেঞ্চ বাগেট রুটি",
+  "gruyere cheese shredded": "গ্রেট করা গ্রুয়ের চিজ",
+  "canned or fresh clams in juice": "তাজা ক্ল্যাম বা ঝিনুক",
+  "thick cut bacon diced": "কিউব করে কাটা বেকন",
+  "yukon gold potatoes diced": "কিউব করে কাটা হলুদ আলু",
+  "celery stalks diced": "কুচানো সেলেরি ডাটা",
+  "clam juice bottle": "ক্ল্যাম জুস বা মাছের স্টক",
+  "ground beef chuck 80/20": "গরুর মিহি কিমা",
+  "brioche burger buns": "নরম ব্রায়োশ বার্গার বান",
+  "American cheese slices": "আমেরিকান চিজ স্লাইস",
+  "dill pickle chips": "ডিল পিকল আচার স্লাইস",
+  "special burger sauce": "স্পেশাল বার্গার সস",
+  "chicken breasts pounded thin": "পাতলা করে ছেঁচে নেওয়া চিকেন ব্রেস্ট",
+  "panko breadcrumbs": "মুচমুচে পাংকো ব্রেডক্রাম্বস",
+  "fresh mozzarella sliced": "স্লাইস করা মোজারেলা চিজ",
+  "san marzano marinara sauce": "সান মারজানো মারিনারা সস",
+  "parmesan cheese grated": "গ্রেট করা পারমেসান চিজ",
+  "eggs beaten": "ফেটিয়ে নেওয়া ডিম",
+  "arborio or carnaroli rice": "আরবোরিও রিসোত্তো চাল",
+  "mixed wild mushrooms sliced": "কাটা বুনো মাশরুম",
+  "warm vegetable stock": "গরম সবজির স্টক",
+  "dry white wine Pinot Grigio": "হোয়াইট ওয়াইন / ব্রথ",
+  "parmigiano reggiano": "পারমিজিয়ানো রেজিয়ানো চিজ",
+  "cold butter cubes": "ঠান্ডা মাখনের কিউব",
+  "primary ingredient": "মূল রান্নার উপকরণ",
+  "olive oil or butter": "অলিভ অয়েল অথবা মাখন",
+  "fresh garlic": "তাজা রসুন",
+  "herbs and seasoning": "ভেষজ পাতা ও মশলা",
+  "onion or shallot": "পেঁয়াজ কুচি"
+};
+
+export const unitTranslations = {
+  "g": "গ্রাম",
+  "kg": "কেজি",
+  "piece": "টি",
+  "pieces": "টি",
+  "tbsp": "টেবিল চামচ",
+  "tsp": "চা চামচ",
+  "cup": "কাপ",
+  "cups": "কাপ",
+  "clove": "কোয়া",
+  "cloves": "কোয়া",
+  "ml": "মি.লি.",
+  "stem": "টি",
+  "can": "ক্যান",
+  "slice": "টুকরো",
+  "slices": "টুকরো",
+  "pinch": "চিমটি"
+};
+
+export const categoryTranslations = {
+  "rice": {
+    "en": "Rice & Biryani",
+    "bn": "ভাত ও বিরিয়ানি"
+  },
+  "meat": {
+    "en": "Meat",
+    "bn": "মাংসের পদ"
+  },
+  "seafood": {
+    "en": "Seafood",
+    "bn": "মাছ ও সামুদ্রিক"
+  },
+  "vegetarian": {
+    "en": "Vegetarian",
+    "bn": "নিরামিষ"
+  },
+  "breakfast": {
+    "en": "Breakfast",
+    "bn": "সকালের নাস্তা"
+  },
+  "snack": {
+    "en": "Snacks",
+    "bn": "নাস্তা ও স্ন্যাকস"
+  },
+  "dessert": {
+    "en": "Dessert",
+    "bn": "মিষ্টি ও ডেজার্ট"
+  },
+  "bread": {
+    "en": "Breads",
+    "bn": "রুটি ও নান"
+  },
+  "drinks": {
+    "en": "Drinks",
+    "bn": "পানীয় ও শরবত"
+  },
+  "pasta": {
+    "en": "Pasta",
+    "bn": "পাস্তা"
+  },
+  "soup": {
+    "en": "Soup",
+    "bn": "স্যুপ"
+  },
+  "sandwich": {
+    "en": "Sandwich & Burgers",
+    "bn": "বার্গার ও স্যান্ডউইচ"
+  },
+  "salad": {
+    "en": "Salad",
+    "bn": "সালাদ"
+  },
+  "pizza": {
+    "en": "Pizza",
+    "bn": "পিজ্জা"
+  }
+};
+
+export const cuisineTranslations = {
+  "bangladeshi": {
+    "en": "Bangladeshi",
+    "bn": "🇧🇩 বাংলাদেশি"
+  },
+  "indian": {
+    "en": "Indian",
+    "bn": "🇮🇳 ভারতীয়"
+  },
+  "western": {
+    "en": "Western",
+    "bn": "🍳 পশ্চিমা"
+  }
+};
+
+export const recipeTitleTranslations = {
+  "Dhaka Shahi Kacchi Biryani": "ঢাকা শাহী কাচ্চি বিরিয়ানি",
+  "Beef Kala Bhuna (Chittagong Style)": "চট্টগ্রামের ঐতিহ্যবাহী বিফ কালা ভুনা",
+  "Shorshe Ilish (Hilsa in Mustard Gravy)": "সর্ষে ইলিশ (সরিষা বাটায় পদ্মার ইলিশ)",
+  "Chingri Malai Curry": "গলদা চিংড়ির মালাই কারি",
+  "Morog Polao (Traditional Bengali Chicken Pilaf)": "ঐতিহ্যবাহী ঢাকা মোরগ পোলাও",
+  "Beef Mezbeni Gosht": "চট্টগ্রামের ঐতিহ্যবাহী মেজবানি মাংস",
+  "Old Dhaka Beef Tehari": "পুরান ঢাকার খাঁটি বিফ তেহারী",
+  "Rui Macher Jhol with Cauliflower & Potatoes": "ফুলকপি ও আলু দিয়ে রুই মাছের ঝোল",
+  "Bhuna Khichuri with Fried Eggplant": "বেগুন ভাজা সহ ভুনা খিচুড়ি",
+  "Aloo Bhorta (Spicy Mashed Potatoes with Mustard Oil)": "খাঁটি সরিষার তেলে আলু ভর্তা",
+  "Begun Bhorta (Smoky Fire-Roasted Eggplant Mash)": "পোড়া বেগুনের ধোঁয়াটে ভর্তা",
+  "Dim Bhuna (Caramelized Onion Spiced Egg Curry)": "ডিম ভুনা দো-পেঁয়াজা",
+  "Ilish Macher Paturi": "কলাপাতায় ইলিশ মাছের পাতুরি",
+  "Mutton Rezala (Dhaka Mughlai White Curry)": "ঢাকার মোগলাই খাসির রেজালা",
+  "Chitol Macher Muitha (Fish Dumpling Curry)": "চিতল মাছের মুইঠ্যা কারি",
+  "Pabda Macher Tel Jhol": "কালোজিরা ফোঁড়নে পাবদা মাছের তেল ঝোল",
+  "Lau Chingri (Bottle Gourd with Baby Prawns)": "কচি লাউ দিয়ে ছোট চিংড়ি",
+  "Piyaju (Crispy Red Lentil & Onion Fritters)": "মচমচে মসুর ডালের পেঁয়াজু",
+  "Mishti Doi (Clay Pot Caramelized Sweet Yogurt)": "বগুড়ার মাটির হাঁড়ির মিষ্টি দই",
+  "Patishapta Pitha": "ক্ষীরসা পাটিসাপটা পিঠা",
+  "Tel Koi (Climbing Perch in Mustard Gravy)": "তেল কৈ মাছের ঝোল",
+  "Rui Posto (Carp in Poppy Seed Paste)": "পোস্ত বাটায় রুই মাছ",
+  "Shutki Bhuna (Spicy Dried Loitta Fish)": "লইট্টা শুঁটকি ভুনা",
+  "Cholar Dal with Coconut": "নারকেল দিয়ে ছোলার ডাল",
+  "Luchi (Bengali Deep-Fried Puffed Bread)": "ঘিয়ে ভাজা ফুলকো লুচি",
+  "Beguni (Crispy Eggplant Fritters)": "মুচমুচে বেগুনি",
+  "Khasir Mangshor Jhol (Home Mutton Curry)": "আলু দিয়ে খাসির মাংসের লাল ঝোল",
+  "Murgir Lal Jhol (Spicy Red Chicken Curry)": "দেশি মুরগির পাতলা লাল ঝোল",
+  "Mochar Ghonto (Banana Blossom Curry)": "নারকেল ও ছোলা দিয়ে মোচার ঘণ্ট",
+  "Dhokar Dalna (Lentil Cake Curry)": "নিরামিষ ডালের ধোঁকার ডালনা",
+  "Chanar Dalna (Cottage Cheese Curry)": "Chanar Dalna (Cottage Cheese কারি)",
+  "Potol Posto (Pointed Gourd with Poppy Seeds)": "Potol Posto (Pointed Gourd with Poppy Seeds)",
+  "Borboti Bhorta (Yardlong Bean Mash)": "Borboti Bhorta (Yardlong Bean Mash)",
+  "Tomato Bhorta (Charred Tomato Mash)": "Tomato Bhorta (Charred Tomato Mash)",
+  "Dal Puri (Spiced Lentil Stuffed Bread)": "Dal Puri (মশলাদার Lentil Stuffed Bread)",
+  "Chachchari (Mixed Vegetable Mustard Stir-Fry)": "Chachchari (Mixed Vegetable Mustard Stir-Fry)",
+  "Shobji Labra (Traditional Mixed Vegetables)": "Shobji Labra (ঐতিহ্যবাহী Mixed Vegetables)",
+  "Fulkopi Diye Rui Mach (Carp with Winter Cauliflower)": "Fulkopi Diye Rui Mach (Carp with Winter Cauliflower)",
+  "Doodh Maach (Fish in Milk Gravy)": "Doodh Maach (মাছের পদ in Milk Gravy)",
+  "Macher Matha Diye Mung Dal (Fish Head Lentils)": "Macher Matha Diye Mung Dal (মাছের পদ Head Lentils)",
+  "Chingri Macher Chop (Bengali Prawn Croquettes)": "Chingri Macher Chop (Bengali চিংড়ি Croquettes)",
+  "Shahi Tukra (Old Dhaka Saffron Toast)": "Shahi Tukra (Old Dhaka Saffron Toast)",
+  "Roshogolla in Cardamom Syrup": "Roshogolla in Cardamom Syrup",
+  "Chomchom (Tangail Style Sweet)": "Chomchom (Tangail স্টাইল Sweet)",
+  "Shemai Zorda (Sweet Dry Vermicelli)": "Shemai Zorda (Sweet Dry Vermicelli)",
+  "Firni (Creamy Rice Pudding in Clay Cup)": "Firni (Creamy রাইস Pudding in Clay Cup)",
+  "Morog Chaap (Mughlai Braised Chicken)": "Morog Chaap (Mughlai Braised চিকেন)",
+  "Beef Shikampuri Kebab": "বিফ Shikampuri Kebab",
+  "Panta Ilish with Dry Chili": "Panta Ilish with Dry Chili",
+  "Kakral Chingri Bhorta": "Kakral Chingri Bhorta",
+  "Delhi Style Butter Chicken (Murgh Makhani)": "Delhi স্টাইল Butter চিকেন (Murgh Makhani)",
+  "Hyderabadi Dum Mutton Biryani": "Hyderabadi Dum খাসির মাংস বিরিয়ানি",
+  "Paneer Butter Masala": "পনির বাটার মসালা",
+  "Classic Dal Makhani": "ক্লাসিক Dal Makhani",
+  "Palak Paneer (Spinach Cottage Cheese Curry)": "Palak Paneer (Spinach Cottage Cheese কারি)",
+  "Amritsari Chana Masala": "Amritsari Chana Masala",
+  "Kashmiri Rogan Josh": "কাশ্মীরি রোগান জোশ",
+  "Goan Fish Curry with Coconut & Kokum": "Goan মাছের পদ কারি with Coconut & Kokum",
+  "Chicken Chettinad": "চিকেন চেট্টিনাদ",
+  "Crispy Samosa with Mint & Tamarind Chutneys": "মচমচে Samosa with Mint & Tamarind Chutneys",
+  "Malai Kofta in Creamy Cashew Gravy": "Malai Kofta in Creamy Cashew Gravy",
+  "Punjabi Rajma Masala": "Punjabi Rajma Masala",
+  "Dal Tadka with Ghee Cumin Tempering": "Dal Tadka with Ghee Cumin Tempering",
+  "Aloo Gobi Matar": "Aloo Gobi Matar",
+  "Lamb Vindaloo (Goan Fiery Stew)": "Lamb Vindaloo (Goan Fiery Stew)",
+  "Masala Dosa with Sambar & Chutney": "Masala Dosa with Sambar & Chutney",
+  "Steamed Idli with Coconut Chutney": "Steamed Idli with Coconut Chutney",
+  "Crispy Medu Vada": "মচমচে Medu Vada",
+  "Smoky Punjabi Baingan Bharta": "Smoky Punjabi Baingan Bharta",
+  "Chicken 65 (Crispy Spiced Bites)": "চিকেন 65 (মচমচে মশলাদার Bites)",
+  "Kadai Paneer with Bell Peppers": "Kadai Paneer with Bell Peppers",
+  "Tandoori Paneer Tikka": "Tandoori Paneer Tikka",
+  "Bhindi Masala (Spiced Okra)": "Bhindi Masala (মশলাদার Okra)",
+  "Fragrant Vegetable Pulao": "Fragrant Vegetable Pulao",
+  "Jeera Rice with Ghee": "Jeera রাইস with Ghee",
+  "Garlic Butter Naan": "Garlic Butter Naan",
+  "Chole Bhature (Fluffy Puffed Bread)": "Chole Bhature (Fluffy Puffed Bread)",
+  "Mumbai Pav Bhaji": "Mumbai Pav Bhaji",
+  "Vada Pav with Garlic Chutney": "Vada Pav with Garlic Chutney",
+  "Pani Puri with Spicy Mint Water": "Pani Puri with Spicy Mint Water",
+  "Bhel Puri Street Style": "Bhel Puri Street স্টাইল",
+  "Lucknowi Chicken Dum Biryani": "Lucknowi চিকেন Dum বিরিয়ানি",
+  "Keema Matar (Spiced Minced Lamb)": "Keema Matar (মশলাদার Minced Lamb)",
+  "Methi Malai Matar": "Methi Malai Matar",
+  "Fish Amritsari": "মাছের পদ Amritsari",
+  "Tandoori Roast Chicken": "Tandoori রোস্ট চিকেন",
+  "Kerala Malabar Prawn Curry": "Kerala Malabar চিংড়ি কারি",
+  "Appam with Vegetable Coconut Stew": "Appam with Vegetable Coconut Stew",
+  "South Indian Lemon Rice": "South Indian Lemon রাইস",
+  "Karnataka Bisi Bele Bath": "Karnataka Bisi Bele Bath",
+  "Kashmiri Dum Aloo": "Kashmiri Dum Aloo",
+  "Shahi Paneer in White Gravy": "Shahi Paneer in White Gravy",
+  "Warm Gulab Jamun in Rose Syrup": "Warm Gulab Jamun in Rose Syrup",
+  "Gajar Ka Halwa with Ghee & Nuts": "Gajar Ka Halwa with Ghee & Nuts",
+  "Rasmalai in Saffron Milk": "Rasmalai in Saffron Milk",
+  "Kaju Katli (Cashew Fudge)": "Kaju Katli (Cashew Fudge)",
+  "Mango Lassi Smoothie": "Mango Lassi Smoothie",
+  "Classic Cardamom Kheer": "ক্লাসিক Cardamom Kheer",
+  "Egg Roast Malabar Style": "Egg রোস্ট Malabar স্টাইল",
+  "Chicken Tikka Skewers": "চিকেন Tikka Skewers",
+  "Creamy Tuscan Garlic Pasta": "Creamy Tuscan Garlic পাস্তা",
+  "Pan-Seared Honey Garlic Salmon": "Pan-Seared Honey Garlic Salmon",
+  "Authentic Roman Spaghetti Carbonara": "Authentic Roman Spaghetti Carbonara",
+  "Classic French Beef Bourguignon": "ক্লাসিক French বিফ Bourguignon",
+  "Pan-Seared Ribeye Steak with Garlic Herb Butter": "Pan-Seared Ribeye Steak with Garlic Herb Butter",
+  "French Onion Soup with Gruyère Crostini": "French Onion স্যুপ with Gruyère Crostini",
+  "New England Clam Chowder": "নিউ ইংল্যান্ড ক্ল্যাম চাউডার",
+  "Classic Smash Cheeseburger with Secret Sauce": "ক্লাসিক Smash Cheeseburger with Secret Sauce",
+  "Chicken Parmigiana (Pollo alla Parmigiana)": "চিকেন Parmigiana (Pollo alla Parmigiana)",
+  "Creamy Wild Mushroom Risotto": "Creamy Wild Mushroom Risotto",
+  "Traditional Beef Lasagna Bolognese": "ঐতিহ্যবাহী বিফ Lasagna Bolognese",
+  "Fettuccine Alfredo with Garlic": "Fettuccine Alfredo with Garlic",
+  "Spaghetti Bolognese (Slow Simmered)": "Spaghetti Bolognese (Slow Simmered)",
+  "Provençal Ratatouille Bake": "Provençal Ratatouille Bake",
+  "British Shepherd’s Pie (Minced Lamb)": "British Shepherd’s Pie (Minced Lamb)",
+  "Hearty English Cottage Pie (Beef)": "Hearty English Cottage Pie (বিফ)",
+  "Crispy Beer-Battered Fish and Chips": "মচমচে Beer-Battered মাছের পদ and Chips",
+  "Chicken Caesar Salad with Garlic Croutons": "চিকেন Caesar সালাদ with Garlic Croutons",
+  "Neapolitan Margherita Pizza": "Neapolitan Margherita পিজ্জা",
+  "Pepperoni & Hot Honey Pizza": "Pepperoni & Hot Honey পিজ্জা",
+  "Classic Beef Wellington": "ক্লাসিক বিফ Wellington",
+  "Pan-Seared Sea Bass with Lemon Capers": "Pan-Seared Sea Bass with Lemon Capers",
+  "Spanish Seafood Paella with Saffron": "Spanish Seafood Paella with Saffron",
+  "Silky Lobster Bisque with Sherry": "Silky Lobster Bisque with Sherry",
+  "Garlic Butter Shrimp Scampi": "Garlic Butter Shrimp Scampi",
+  "Barbecue Glazed Baby Back Ribs": "Barbecue Glazed Baby Back Ribs",
+  "Homestyle Chicken Pot Pie": "Homeস্টাইল চিকেন Pot Pie",
+  "Beef Stroganoff over Buttered Egg Noodles": "বিফ Stroganoff over Buttered Egg Noodles",
+  "Eggs Benedict with Velvety Hollandaise": "Eggs Benedict with Velvety Hollandaise",
+  "Greek Village Salad with Kalamata & Feta": "Greek Village সালাদ with Kalamata & Feta",
+  "Caprese Salad with Aged Balsamic Glaze": "Caprese সালাদ with Aged Balsamic Glaze",
+  "Velvety Roasted Butternut Squash Soup": "Velvety রোস্টed Butternut Squash স্যুপ",
+  "Italian Minestrone with Cannellini Beans": "Italian Minestrone with Cannellini Beans",
+  "Grilled Salmon with Steamed Asparagus": "Grilled Salmon with Steamed Asparagus",
+  "Swedish Meatballs with Lingonberry Jam": "Swedish Meatballs with Lingonberry Jam",
+  "Crispy Calamari Fritti with Marinara": "মচমচে Calamari Fritti with Marinara",
+  "Shakshuka with Crumbled Feta": "Shakshuka with Crumbled Feta",
+  "Roasted Lemon Rosemary Whole Chicken": "রোস্টed Lemon Rosemary Whole চিকেন",
+  "Classic Chicken Cordon Bleu": "ক্লাসিক চিকেন Cordon Bleu",
+  "Smoky Pulled Pork Sliders": "Smoky Pulled Pork Sliders",
+  "Warm Spinach and Artichoke Dip": "Warm Spinach and Artichoke Dip",
+  "Linguine alle Vongole (Clam Pasta)": "Linguine alle Vongole (Clam পাস্তা)",
+  "French Crêpes with Chantilly Cream": "French Crêpes with Chantilly Cream",
+  "Belgian Buttermilk Waffles": "Belgian Buttermilk Waffles",
+  "New York Baked Cheesecake": "New York Baked Cheesecake",
+  "Classic Espresso Tiramisu": "ক্লাসিক Espresso Tiramisu",
+  "Molten Chocolate Lava Cake": "Molten Chocolate Lava Cake",
+  "Caramelized Apple Tarte Tatin": "Caramelized Apple Tarte Tatin",
+  "Vanilla Bean Crème Brûlée": "Vanilla Bean Crème Brûlée",
+  "Avocado Toast with Poached Egg": "Avocado Toast with Poached Egg"
+};
+
+export const recipeDescriptionTranslations = {
+  "Legendary Old Dhaka style dum biryani made with marinated raw mutton, fragrant Chinigura rice, fried potatoes, and saffron milk.": "মেরিনেট করা কাঁচা খাসির মাংস, সুগন্ধি চিনিগুঁড়া চাল, ভাজা আলু এবং জাফরান-দুধের সমন্বয়ে পুরান ঢাকার ঐতিহ্যবাহী শাহী দম বিরিয়ানি।",
+  "The crowning glory of Chittagong cuisine: beef slow-cooked in mustard oil until intensely dark, deeply caramelized, and tender.": "চট্টগ্রামের শ্রেষ্ঠ ঐতিহ্য: সরিষার তেলে ধীরে ধীরে কষানো গাঢ় কালো, অত্যন্ত মোলায়েম ও ক্যারামেলাইজড গরুর মাংস।",
+  "Padma River Hilsa steaks gently simmered in stone-ground yellow and black mustard paste with green chilies and pungent mustard oil.": "শীলপাটায় বাটা হলুদ ও কালো সরিষা, কাঁচামরিচ ও খাঁটি সরিষার তেলে রান্না করা পদ্মার তাজা ইলিশের লোভনীয় পদ।",
+  "Royal freshwater Golda Chingri (giant prawns) cooked in rich, silky coconut milk flavored with cardamom, cinnamon, and mild green chilies.": "ঘন ক্রিমি নারকেলের দুধ, এলাচ, দারুচিনি ও কাঁচামরিচের সুগন্ধে তৈরি রাজকীয় স্বাদের তাজা গলদা চিংড়ির মালাই কারি।",
+  "A celebration centerpiece: bone-in chicken thighs braised in yogurt and spices, layered with fragrant Kalijira rice, alu bukhara, and mawa.": "উৎসবের সেরা খাবার: টকদই ও মশলায় কষানো মাংস, সুগন্ধি কালিজিরা চাল, আলুবোখারা ও মাওয়া দিয়ে রান্না করা মোরগ পোলাও।",
+  "Chittagong traditional feast beef braised with mustard oil, fenugreek, dried whole red chilies, and white poppy seeds.": "সরিষার তেল, মেথি, আস্ত শুকনো লাল মরিচ ও সাদা পোস্তদানার অনন্য স্বাদে চট্টগ্রামের ঐতিহ্যবাহী মেজবানি মাংস।",
+  "Small tender cubes of beef cooked in pure mustard oil, green chilies, and whole spices, then tossed with Chinigura rice.": "খাঁটি সরিষার তেলে ছোট মাংসের কিউব, কাঁচামরিচ ও গোটা মশলায় কষিয়ে চিনিগুঁড়া চালের সাথে রান্না করা পুরান ঢাকার খাঁটি তেহারী।",
+  "Everyday Bengali comfort meal: shallow-fried Rohu carp steaks simmered in light cumin-ginger broth with potatoes and winter cauliflower.": "বাঙালির ঘরোয়া স্বস্তি: ভাজা রুই মাছের টুকরো, আলু ও ফুলকপির সাথে হালকা জিরা-আদার সুস্বাদু পাতলা ঝোল।",
+  "Rainy-day Bengali staple made with roasted moong dal, Chinigura rice, ghee, and whole warming spices.": "বৃষ্টির দিনের সেরা খাবার: ভাজা সোনা মুগ ডাল, চিনিগুঁড়া চাল, খাঁটি গাওয়া ঘি ও গোটা গরম মশলায় রান্না করা ভুনা খিচুড়ি।",
+  "The quintessential comfort bhorta: boiled potatoes mashed with fried dried red chilies, chopped raw shallots, and pungent mustard oil.": "বাঙালির চিরচেনা তৃপ্তিদায়ক ভর্তা: ভাজা শুকনো মরিচ, পেঁয়াজ কুচি ও ঝাঁঝালো সরিষার তেলে চটকানো নরম আলু ভর্তা।",
+  "Smoky Fire-Roasted Eggplant Mash": "আগুনে পুড়িয়ে ধোঁয়াটে স্বাদের বেগুন ভর্তা, ভাজা কাঁচামরিচ ও সরিষার তেলের ঝাঁঝে পরিপূর্ণ।",
+  "Iconic Bengali sweet yogurt set in earthen clay pots, flavored with caramelized palm jaggery and reduced whole milk.": "ঘন জ্বাল দেওয়া দুধ ও পোড়ানো গুড়ের ক্যারামেল দিয়ে মাটির সরায় জমানো বগুড়ার ঐতিহ্যবাহী মিষ্টি দই।",
+  "Delicate crepes made from rice flour and semolina, rolled around a luscious filling of condensed milk kheer and coconut.": "চালের গুঁড়া ও সুজির পাতলা পিঠায় ঘন ক্ষীরসা ও নারকেলের পুরে মোড়ানো শীতের মিষ্টি পাটিসাপটা পিঠা।"
+};
+
 export const stepTranslations = {
   "Marinate mutton with yogurt, ginger-garlic paste, shahi garam masala, chili powder, and salt for 3 hours.": "দই, আদা-রসুন বাটা, শাহী গরম মশলা, মরিচ গুঁড়া এবং লবণ দিয়ে খাসির মাংস ৩ ঘণ্টা মেরিনেট করে রাখুন।",
   "Deep fry potato halves with pinch of turmeric and salt until golden crust forms.": "সামান্য হলুদ ও লবণ মাখিয়ে অর্ধেক করে কাটা আলুগুলো সোনালী মুচমুচে করে ডুবো তেলে ভেজে নিন।",
@@ -185,157 +668,88 @@ export const stepTranslations = {
   "Plate carefully, garnish with fresh herbs, and serve warm.": "সুন্দর করে পাত্রে সাজিয়ে তাজা ভেষজ পাতা ছড়িয়ে গরম গরম পরিবেশন করুন।"
 };
 
-// Common culinary action verbs & ingredients for intelligent fallback translation
-const verbReplacements = [
-  [/^Marinate /i, 'মেরিনেট করুন: '],
-  [/^Sauté /i, 'ভেজে নিন: '],
-  [/^Deep fry /i, 'ডুবো তেলে ভাজুন: '],
-  [/^Pan-fry /i, 'প্যানে ভাজুন: '],
-  [/^Boil /i, 'সেদ্ধ করুন: '],
-  [/^Simmer /i, 'মৃদু আঁচে রান্না করুন: '],
-  [/^Roast /i, 'রোস্ট করুন: '],
-  [/^Bake /i, 'বেক করুন: '],
-  [/^Whisk /i, 'ভালো করে ফেটান: '],
-  [/^Grind /i, 'বেটে নিন: '],
-  [/^Garnish /i, 'সাজিয়ে পরিবেশন করুন: '],
-  [/^Mix /i, 'মিশিয়ে নিন: '],
-  [/^Heat /i, 'গরম করুন: '],
-  [/^Coat /i, 'ভালো করে মাখিয়ে নিন: '],
-  [/^Drizzle /i, 'ছড়িয়ে দিন: '],
-  [/^Sprinkle /i, 'ছিটিয়ে দিন: '],
-  [/^Clean /i, 'পরিষ্কার করুন: '],
-  [/^Cook /i, 'রান্না করুন: '],
-  [/^Serve /i, 'পরিবেশন করুন: ']
-];
-
-// Title translations for recipes
-export const recipeTitleTranslations = {
-  'Dhaka Shahi Kacchi Biryani': 'ঢাকা শাহী কাচ্চি বিরিয়ানি',
-  'Beef Kala Bhuna (Chittagong Style)': 'চট্টগ্রামের ঐতিহ্যবাহী বিফ কালা ভুনা',
-  'Shorshe Ilish (Mustard Hilsa)': 'সর্ষে ইলিশ',
-  'Chingri Malai Curry': 'চিংড়ি মালাই কারি',
-  'Dhaka Morog Polao': 'ঢাকা মোরগ পোলাও',
-  'Mezbani Gosht (Chittagong)': 'চট্টগ্রামের মেজবানি মাংস',
-  'Old Dhaka Beef Tehari': 'পুরান ঢাকার বিফ তেহারী',
-  'Machher Jhol (Bengali Fish Curry)': 'বাঙালি মাছের ঝোল',
-  'Bhuna Khichuri with Begun Bhaja': 'বেগুন ভাজা সহ ভুনা খিচুড়ি',
-  'Aloo Bhorta': 'আলু ভর্তা',
-  'Begun Bhorta': 'বেগুন ভর্তা',
-  'Dimer Dalna': 'ডিমের ডালনা',
-  'Ilish Paturi': 'কলাপাতায় ইলিশ পাতুরি',
-  'Mutton Rezala': 'খাসির রেজালা',
-  'Chitol Machher Muitha': 'চিতল মাছের মুইঠ্যা',
-  'Pabda Machher Jhol': 'পাবদা মাছের ঝোল',
-  'Lau Chingri': 'লাউ চিংড়ি',
-  'Dal Piyaju (Crispy Fritters)': 'মচমচে ডাল পিয়াজু',
-  'Bogura Mishti Doi': 'বগুড়ার মিষ্টি দই',
-  'Kheer Patishapta': 'ক্ষীর পাটিসাপটা',
-  'Butter Chicken (Murgh Makhani)': 'বাটার চিকেন (মুর্গ মাখানি)',
-  'Hyderabadi Dum Biryani': 'হায়দ্রাবাদী দম বিরিয়ানি',
-  'Paneer Butter Masala': 'পনির বাটার মসালা',
-  'Dal Makhani': 'দাল মাখানি',
-  'Palak Paneer': 'পালং পনির',
-  'Amritsari Chole': 'অমৃতসরী ছোলে',
-  'Kashmiri Rogan Josh': 'কাশ্মীরি রোগান জোশ',
-  'Goan Fish Curry': 'গোয়ান ফিশ কারি',
-  'Chicken Chettinad': 'চিকেন চেট্টিনাদ',
-  'Punjabi Samosa': 'পাঞ্জাবি সিঙ্গাড়া (সমুচা)',
-  'Creamy Tuscan Garlic Chicken Penne': 'ক্রিমি তুসকান গার্লিক চিকেন পেন্নে',
-  'Honey Garlic Glazed Salmon': 'হানি গার্লিক গ্লেজড স্যামন',
-  'Classic Roman Spaghetti Carbonara': 'ক্লাসিক স্প্যাগেটি কার্বোনারা',
-  'Authentic French Beef Bourguignon': 'ফ্রেঞ্চ বিফ বুরগিনিয়ন',
-  'Cast Iron Ribeye Steak with Herb Butter': 'রিবআই স্টেক হার্ব বাটার সহ',
-  'Classic French Onion Soup': 'ক্লাসিক ফ্রেঞ্চ অনিয়ন স্যুপ',
-  'New England Clam Chowder': 'নিউ ইংল্যান্ড ক্ল্যাম চাউডার',
-  'Oklahoma Onion Smash Burger': 'অনিয়ন স্ম্যাশ বার্গার',
-  'Crispy Chicken Parmesan': 'ক্রিস্পি চিকেন পারমেসান',
-  'Wild Mushroom Risotto': 'ওয়াইল্ড মাশরুম রিসোত্তো'
-};
-
-// Common ingredient translations
-export const ingredientTranslations = {
-  'mutton': 'খাসির মাংস',
-  'beef': 'গরুর মাংস',
-  'chicken': 'মুরগির মাংস',
-  'fish': 'মাছ',
-  'prawns': 'চিংড়ি',
-  'shrimp': 'চিংড়ি',
-  'egg': 'ডিম',
-  'eggs': 'ডিম',
-  'potatoes': 'আলু',
-  'potato': 'আলু',
-  'onions': 'পেঁয়াজ',
-  'onion': 'পেঁয়াজ',
-  'garlic': 'রসুন',
-  'ginger': 'আদা',
-  'mustard oil': 'সরিষার তেল',
-  'rice': 'চাল',
-  'chinigura rice': 'চিনিগুঁড়া চাল',
-  'ghee': 'ঘি',
-  'yogurt': 'দই',
-  'plain yogurt': 'টকদই',
-  'milk': 'দুধ',
-  'turmeric': 'হলুদ',
-  'chili powder': 'মরিচ গুঁড়া',
-  'coriander': 'ধনে',
-  'cumin': 'জিরা',
-  'salt': 'লবণ',
-  'sugar': 'চিনি',
-  'green chilies': 'কাঁচামরিচ',
-  'coriander leaves': 'ধনেপাতা',
-  'butter': 'মাখন',
-  'flour': 'ময়দা',
-  'oil': 'তেল',
-  'olive oil': 'অলিভ অয়েল',
-  'tomato': 'টমেটো',
-  'tomatoes': 'টমেটো',
-  'paneer': 'পনির',
-  'cream': 'ক্রিম',
-  'heavy cream': 'ঘন ক্রিম'
-};
-
 /**
- * Translates a recipe step instruction into natural Bangla when language is 'bn'.
+ * Translates step instruction into natural Bangla or pure English.
  */
 export function translateInstruction(instruction, language = 'en') {
   if (!instruction || language !== 'bn') return instruction;
-
-  // 1. Exact match in comprehensive translations map
   const trimmed = instruction.trim();
-  if (stepTranslations[trimmed]) {
-    return stepTranslations[trimmed];
-  }
-
-  // 2. Check for close normalized match
+  if (stepTranslations[trimmed]) return stepTranslations[trimmed];
   for (const [key, value] of Object.entries(stepTranslations)) {
-    if (key.toLowerCase() === trimmed.toLowerCase()) {
-      return value;
-    }
+    if (key.toLowerCase() === trimmed.toLowerCase()) return value;
   }
-
-  // 3. Fallback: Intelligent verb prefix translation if available
-  for (const [pattern, replacement] of verbReplacements) {
-    if (pattern.test(trimmed)) {
-      return trimmed.replace(pattern, replacement);
-    }
-  }
-
   return instruction;
 }
 
 /**
- * Translates a recipe title into natural Bangla when language is 'bn'.
+ * Translates recipe title into natural Bangla or pure English.
  */
 export function translateTitle(title, language = 'en') {
   if (!title || language !== 'bn') return title;
-  return recipeTitleTranslations[title] || title;
+  const trimmed = title.trim();
+  if (recipeTitleTranslations[trimmed]) return recipeTitleTranslations[trimmed];
+  for (const [key, value] of Object.entries(recipeTitleTranslations)) {
+    if (key.toLowerCase() === trimmed.toLowerCase()) return value;
+  }
+  return title;
 }
 
 /**
- * Translates an ingredient name into natural Bangla when language is 'bn'.
+ * Translates recipe description into natural Bangla or pure English.
+ */
+export function translateDescription(desc, language = 'en') {
+  if (!desc || language !== 'bn') return desc;
+  const trimmed = desc.trim();
+  if (recipeDescriptionTranslations[trimmed]) return recipeDescriptionTranslations[trimmed];
+  for (const [key, value] of Object.entries(recipeDescriptionTranslations)) {
+    if (key.toLowerCase() === trimmed.toLowerCase()) return value;
+  }
+  return desc;
+}
+
+/**
+ * Translates ingredient name into natural Bangla or pure English.
  */
 export function translateIngredient(name, language = 'en') {
   if (!name || language !== 'bn') return name;
-  const lower = name.toLowerCase().trim();
-  return ingredientTranslations[lower] || name;
+  const trimmed = name.toLowerCase().trim();
+  if (ingredientTranslations[trimmed]) return ingredientTranslations[trimmed];
+  // Substring matching for compound ingredients
+  for (const [key, val] of Object.entries(ingredientTranslations)) {
+    if (trimmed.includes(key)) return val;
+  }
+  return name;
+}
+
+/**
+ * Translates quantity unit (e.g. g, piece, tbsp, cup) into natural Bangla or pure English.
+ */
+export function translateUnit(unit, language = 'en') {
+  if (!unit || language !== 'bn') return unit;
+  const trimmed = unit.toLowerCase().trim();
+  return unitTranslations[trimmed] || unit;
+}
+
+/**
+ * Translates recipe category (e.g. rice, seafood, meat) into natural Bangla or pure English.
+ */
+export function translateCategory(cat, language = 'en') {
+  if (!cat) return '';
+  const trimmed = cat.toLowerCase().trim();
+  if (categoryTranslations[trimmed]) {
+    return language === 'bn' ? categoryTranslations[trimmed].bn : categoryTranslations[trimmed].en;
+  }
+  return cat;
+}
+
+/**
+ * Translates cuisine name into natural Bangla or pure English.
+ */
+export function translateCuisine(cuisine, language = 'en') {
+  if (!cuisine) return '';
+  const trimmed = cuisine.toLowerCase().trim();
+  if (cuisineTranslations[trimmed]) {
+    return language === 'bn' ? cuisineTranslations[trimmed].bn : cuisineTranslations[trimmed].en;
+  }
+  return cuisine;
 }

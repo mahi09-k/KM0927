@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Clock, Users, ChevronRight, Bookmark } from 'lucide-react';
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
-import { translateTitle } from '../../i18n/recipeTranslations';
+import { translateTitle, translateCategory, translateCuisine } from '../../i18n/recipeTranslations';
 import { toggleSaveRecipe } from '../../api';
 
 export default function RecipeCard({ recipe, isSavedDefault = false }) {
@@ -56,11 +56,11 @@ export default function RecipeCard({ recipe, isSavedDefault = false }) {
         <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">
           {recipe.cuisine && (
             <span className={`${badge.bg} text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-sm`}>
-              {badge.label}
+              {translateCuisine(recipe.cuisine, language)}
             </span>
           )}
           <span className="bg-white/95 dark:bg-neutral-900/90 text-charcoal dark:text-neutral-200 text-[11px] font-semibold tracking-wide px-2.5 py-1 rounded-full capitalize shadow-sm">
-            {recipe.category}
+            {translateCategory(recipe.category, language)}
           </span>
         </div>
 

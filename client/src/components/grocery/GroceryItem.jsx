@@ -1,5 +1,6 @@
 import useLanguageStore from '../../store/languageStore';
 import { toBengaliNumber } from '../../i18n/translations';
+import { translateIngredient, translateUnit } from '../../i18n/recipeTranslations';
 
 export default function GroceryItem({ item, onToggle }) {
   const { language } = useLanguageStore();
@@ -24,11 +25,11 @@ export default function GroceryItem({ item, onToggle }) {
             item.is_checked ? 'line-through text-gray-400' : ''
           }`}
         >
-          {item.name}
+          {translateIngredient(item.name, language)}
         </span>
       </div>
       <span className="text-xs font-bold text-gray-500">
-        {toBengaliNumber(item.total_quantity, language)} {item.unit}
+        {toBengaliNumber(item.total_quantity, language)} {translateUnit(item.unit, language)}
       </span>
     </button>
   );

@@ -4,10 +4,12 @@ import LanguageSelector from '../common/LanguageSelector';
 import UserAvatar from '../common/UserAvatar';
 import { useThemeStore } from '../../store/themeStore';
 import { useAuthStore } from '../../store/authStore';
+import useLanguageStore from '../../store/languageStore';
 
 export default function Header({ title, subtitle, showLang = true, showProfileShortcut = true }) {
   const { theme, toggleTheme } = useThemeStore();
   const { currentUser } = useAuthStore();
+  const { language } = useLanguageStore();
 
   return (
     <header className="px-5 pt-8 pb-3">
@@ -27,7 +29,7 @@ export default function Header({ title, subtitle, showLang = true, showProfileSh
             onClick={toggleTheme}
             aria-label="Toggle theme"
             className="p-1.5 rounded-full bg-softgray dark:bg-neutral-800 text-charcoal dark:text-amber-400 hover:scale-105 active:scale-95 transition-all"
-            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            title={theme === 'dark' ? (language === 'bn' ? 'লাইট মোড' : 'Switch to Light Mode') : (language === 'bn' ? 'ডার্ক মোড' : 'Switch to Dark Mode')}
           >
             {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
           </button>

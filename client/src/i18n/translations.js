@@ -103,7 +103,7 @@ export const translations = {
       allCuisines: 'All Cuisines (150)',
     },
     cuisines: {
-      bangladeshi: '🇧🇩 Bengali',
+      bangladeshi: '🇧🇩 Bangladeshi',
       indian: '🇮🇳 Indian',
       western: '🍳 Western',
     },

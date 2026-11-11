@@ -25,7 +25,7 @@ export default function RecipePage() {
     <div>
       <button
         onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 z-30 p-2.5 bg-white/95 backdrop-blur rounded-full shadow-md text-charcoal hover:bg-white transition"
+        className="absolute top-4 left-4 z-30 p-2.5 bg-white/95 dark:bg-[#1C1C1A]/95 backdrop-blur rounded-full shadow-md text-charcoal dark:text-neutral-200 hover:bg-white dark:hover:bg-neutral-800 transition"
         title={t.recipeDetail.back}
       >
         <ArrowLeft size={18} />

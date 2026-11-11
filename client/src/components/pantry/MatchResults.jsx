@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Clock, CheckCircle } from 'lucide-react';
 import useLanguageStore from '../../store/languageStore';
 import { translations, toBengaliNumber } from '../../i18n/translations';
+import { translateTitle, translateCategory, translateCuisine } from '../../i18n/recipeTranslations';
 
 export default function MatchResults({ results }) {
   const navigate = useNavigate();
@@ -54,13 +55,13 @@ export default function MatchResults({ results }) {
                   <span
                     className={`${badge.bg} text-white text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full`}
                   >
-                    {badge.label}
+                    {translateCuisine(r.cuisine, language)}
                   </span>
                 )}
-                <span className="text-[10px] text-gray-400 capitalize">{r.category}</span>
+                <span className="text-[10px] text-gray-400 capitalize">{translateCategory(r.category, language)}</span>
               </div>
               <h3 className="font-bold text-xs sm:text-sm text-charcoal leading-snug">
-                {r.title}
+                {translateTitle(r.title, language)}
               </h3>
               <div className="flex items-center gap-2 mt-2">
                 <span className="flex items-center gap-1 text-[11px] text-gray-400">
