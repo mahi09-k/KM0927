@@ -10,8 +10,8 @@ export default function AccountTab({ user, onUpdate, saving }) {
   const { openAuthModal, savedAccounts, currentUser, switchAccount, logout } = useAuthStore();
   const t = translations[language]?.profile || translations.en.profile;
 
-  const [name, setName] = useState(user?.name || 'Ayesha Rahman');
-  const [email, setEmail] = useState(user?.email || 'ayesha@sizzlespoon.com');
+  const [name, setName] = useState(user?.name || '');
+  const [email, setEmail] = useState(user?.email || '');
   const [avatarUrl, setAvatarUrl] = useState(user?.avatar_url || null);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
   const [customUrlInput, setCustomUrlInput] = useState('');
@@ -122,16 +122,16 @@ export default function AccountTab({ user, onUpdate, saving }) {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
               <h2 className="text-xl font-bold font-display text-charcoal dark:text-white truncate">
-                {name}
+                {name || t.account?.guestChef || (language === 'bn' ? 'অতিথি শেফ' : 'Guest Chef')}
               </h2>
             </div>
             <p className="text-xs text-gray-500 dark:text-neutral-400 flex items-center gap-1.5 mt-0.5 truncate">
               <Mail size={12} className="flex-shrink-0" />
-              <span>{email}</span>
+              <span>{email || t.account?.noEmail || (language === 'bn' ? 'কোনো ইমেইল যুক্ত করা হয়নি' : 'No email connected')}</span>
             </p>
             <div className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60 text-[11px] font-medium">
               <Sparkles size={11} className="text-amber-600 dark:text-amber-400" />
-              <span>{t.account?.badge || 'Verified Home Chef 🍳'}</span>
+              <span>{t.account?.badge || 'Home Chef 🍳'}</span>
             </div>
           </div>
         </div>
@@ -222,6 +222,7 @@ export default function AccountTab({ user, onUpdate, saving }) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
+            placeholder={t.account?.namePlaceholder || (language === 'bn' ? 'আপনার পূর্ণ নাম লিখুন' : 'Enter your full name')}
             className="w-full text-sm px-3.5 py-2.5 rounded-xl bg-softgray dark:bg-neutral-800/80 border border-transparent focus:border-terracotta dark:focus:border-terracotta focus:bg-white dark:focus:bg-neutral-900 outline-none text-charcoal dark:text-white transition-all"
           />
         </div>
@@ -235,11 +236,11 @@ export default function AccountTab({ user, onUpdate, saving }) {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email Address"
+            placeholder={t.account?.emailPlaceholder || (language === 'bn' ? 'আপনার ইমেইল ঠিকানা লিখুন' : 'Enter your email address')}
             className="w-full text-sm px-3.5 py-2.5 rounded-xl bg-softgray dark:bg-neutral-800/80 border border-transparent focus:border-terracotta dark:focus:border-terracotta focus:bg-white dark:focus:bg-neutral-900 outline-none text-charcoal dark:text-white transition-all"
           />
           <p className="text-[10px] text-gray-400 mt-1">
-            You can change your email address here. Changes are saved to your account in real-time.
+            {language === 'bn' ? 'এখানে আপনার ইমেইল যুক্ত বা পরিবর্তন করতে পারেন।' : 'You can enter or update your email address here.'}
           </p>
         </div>
 
@@ -286,47 +287,49 @@ export default function AccountTab({ user, onUpdate, saving }) {
 
         {/* List of Saved Accounts on Device */}
         <div className="space-y-2">
-          {savedAccounts.map((acc) => {
-            const isActive = currentUser?.id === acc.id;
-            return (
-              <div
-                key={acc.id}
-                className={`p-3 rounded-xl border flex items-center justify-between transition-all ${
-                  isActive
-                    ? 'bg-terracotta/5 border-terracotta/40 dark:border-terracotta/60'
-                    : 'bg-softgray/50 dark:bg-neutral-800/40 border-transparent hover:border-gray-200'
-                }`}
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <UserAvatar user={acc} size="sm" />
-                  <div className="min-w-0">
-                    <span className="text-xs font-bold text-charcoal dark:text-white block truncate">
-                      {acc.name}
-                    </span>
-                    <span className="text-[11px] text-gray-400 block truncate">
-                      {acc.email}
-                    </span>
+          {savedAccounts
+            .filter((a) => a.name && a.email)
+            .map((acc) => {
+              const isActive = currentUser?.id === acc.id;
+              return (
+                <div
+                  key={acc.id}
+                  className={`p-3 rounded-xl border flex items-center justify-between transition-all ${
+                    isActive
+                      ? 'bg-terracotta/5 border-terracotta/40 dark:border-terracotta/60'
+                      : 'bg-softgray/50 dark:bg-neutral-800/40 border-transparent hover:border-gray-200'
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <UserAvatar user={acc} size="sm" />
+                    <div className="min-w-0">
+                      <span className="text-xs font-bold text-charcoal dark:text-white block truncate">
+                        {acc.name}
+                      </span>
+                      <span className="text-[11px] text-gray-400 block truncate">
+                        {acc.email}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    {isActive ? (
+                      <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
+                        Current
+                      </span>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => switchAccount(acc)}
+                        className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-charcoal dark:text-neutral-200 hover:text-terracotta hover:border-terracotta transition-colors shadow-2xs"
+                      >
+                        Switch
+                      </button>
+                    )}
                   </div>
                 </div>
-
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  {isActive ? (
-                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
-                      Current
-                    </span>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => switchAccount(acc)}
-                      className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-charcoal dark:text-neutral-200 hover:text-terracotta hover:border-terracotta transition-colors shadow-2xs"
-                    >
-                      Switch
-                    </button>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
 
         <div className="pt-2 flex gap-2">

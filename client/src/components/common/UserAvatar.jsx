@@ -7,7 +7,7 @@ export default function UserAvatar({ user, size = 'md', className = '', alt }) {
   const name = user?.name || '';
   const avatarUrl = user?.avatar_url;
 
-  // Extract up to 2 initials
+  // Extract up to 2 initials if name is provided
   const initials = name
     .trim()
     .split(/\s+/)
@@ -15,7 +15,7 @@ export default function UserAvatar({ user, size = 'md', className = '', alt }) {
     .filter(Boolean)
     .slice(0, 2)
     .join('')
-    .toUpperCase() || 'U';
+    .toUpperCase();
 
   const sizeClasses = {
     xs: 'w-6 h-6 text-[10px]',
@@ -43,10 +43,10 @@ export default function UserAvatar({ user, size = 'md', className = '', alt }) {
       className={`${selectedSize} rounded-full bg-gradient-to-br from-terracotta to-[#C23C13] text-white font-bold flex items-center justify-center flex-shrink-0 select-none shadow-xs ${className}`}
       title={name}
     >
-      {initials.length > 0 ? (
+      {initials ? (
         <span>{initials}</span>
       ) : (
-        <User size={size === 'xl' ? 32 : size === 'lg' ? 20 : 14} />
+        <User size={size === 'xl' ? 36 : size === 'lg' ? 22 : size === 'sm' ? 14 : 18} />
       )}
     </div>
   );

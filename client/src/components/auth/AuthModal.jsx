@@ -230,13 +230,15 @@ export default function AuthModal({ onAuthSuccess }) {
         </form>
 
         {/* Saved Accounts On This Device */}
-        {savedAccounts.length > 0 && (
+        {savedAccounts.filter((a) => a.name && a.email).length > 0 && (
           <div className="mt-4 pt-3.5 border-t border-gray-100 dark:border-neutral-800">
             <h4 className="text-[10px] uppercase font-bold tracking-wider text-gray-400 dark:text-neutral-500 mb-2">
               Saved Accounts On This Device
             </h4>
             <div className="space-y-1.5 max-h-32 overflow-y-auto scrollbar-hide">
-              {savedAccounts.map((acc) => {
+              {savedAccounts
+                .filter((a) => a.name && a.email)
+                .map((acc) => {
                 const isActive = currentUser?.id === acc.id;
                 return (
                   <button

@@ -3,15 +3,17 @@ import axios from 'axios';
 
 const DEFAULT_USER = {
   id: 1,
-  name: 'Ayesha Rahman',
-  email: 'ayesha@sizzlespoon.com',
+  name: '',
+  email: '',
   avatar_url: null,
   default_servings: 4,
-  created_at: '2024-03-15T10:00:00.000Z',
+  created_at: new Date().toISOString(),
 };
 
 const sanitizeUser = (user) => {
   if (!user) return user;
+  if (user.name === 'Ayesha Rahman') user.name = '';
+  if (user.email === 'ayesha@sizzlespoon.com') user.email = '';
   if (user.avatar_url && user.avatar_url.includes('photo-1534528741775')) {
     return { ...user, avatar_url: null };
   }

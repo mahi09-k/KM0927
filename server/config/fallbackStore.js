@@ -4,13 +4,13 @@ const FALLBACK_RECIPES = require('../database/allRecipes');
 let fallbackUsers = [
   {
     id: 1,
-    name: 'Ayesha Rahman',
-    email: 'ayesha@sizzlespoon.com',
+    name: '',
+    email: '',
     password: 'password123',
     password_hash: 'hashed_password123',
     avatar_url: null,
     default_servings: 4,
-    created_at: '2024-03-15T10:00:00.000Z',
+    created_at: new Date().toISOString(),
   },
 ];
 

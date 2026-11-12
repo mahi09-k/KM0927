@@ -21,7 +21,7 @@ async function seed() {
     console.log('👤 Seeding default user and culinary preferences...');
     await conn.query(
       `INSERT INTO users (id, name, email, password_hash, avatar_url, default_servings, created_at)
-       VALUES (1, 'Ayesha Rahman', 'ayesha@sizzlespoon.com', 'scrypt_hashed_password_sample', NULL, 4, '2024-03-15 10:00:00')`
+       VALUES (1, '', '', 'scrypt_hashed_password_sample', NULL, 4, NOW())`
     );
 
     await conn.query(
