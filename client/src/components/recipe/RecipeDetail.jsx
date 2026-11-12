@@ -10,11 +10,17 @@ import { toggleSaveRecipe, fetchUserProfile } from '../../api';
 
 export default function RecipeDetail({ recipe }) {
   const [servings, setServings] = useState(recipe.base_servings || 4);
+  const [unitSystem, setUnitSystem] = useState('M'); // 'M' or 'US'
   const [cookMode, setCookMode] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const { language } = useLanguageStore();
   const t = translations[language] || translations.en;
   const totalTime = (recipe.prep_time || 0) + (recipe.cook_time || 0);
+
+  const baseServings = recipe.base_servings || 4;
+  const halfScaleServings = Math.max(1, Math.round(baseServings * 0.5));
+  const fullScaleServings = baseServings;
+  const doubleScaleServings = baseServings * 2;
 
   useEffect(() => {
     // Check if user has a custom default servings or if recipe is saved
@@ -111,38 +117,126 @@ export default function RecipeDetail({ recipe }) {
       <div className="px-5 mt-5">
         <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">{translateDescription(recipe.description, language)}</p>
 
-        {/* Interactive Scaler Header */}
-        <div className="flex items-center justify-between mt-6 mb-4">
-          <div>
-            <h2 className="font-display text-xl font-bold text-charcoal dark:text-white">{t.recipeDetail?.ingredients || 'Ingredients'}</h2>
-            <p className="text-[11px] text-gray-400 dark:text-neutral-500">{t.recipeDetail?.scaleSubtitle || 'Scale recipe dynamically'}</p>
+        {/* Ingredients Header with UNITS & SCALE Bars */}
+        <div className="mt-7 mb-4">
+          <div className="flex flex-wrap items-center justify-between gap-y-3 pb-3 border-b border-gray-200 dark:border-neutral-800">
+            <h2 className="text-xs sm:text-sm font-bold tracking-widest text-charcoal dark:text-neutral-200 uppercase font-sans">
+              {language === 'bn' ? 'উপকরণ' : 'INGREDIENTS'}
+            </h2>
+
+            <div className="flex items-center gap-3 sm:gap-4 select-none">
+              {/* UNITS: [ US ] [ M ] */}
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] font-bold tracking-wider text-gray-400 dark:text-neutral-500 uppercase">
+                  {language === 'bn' ? 'একক' : 'UNITS'}
+                </span>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setUnitSystem('US')}
+                    className={`px-2 py-0.5 rounded-sm text-xs font-bold border transition-all ${
+                      unitSystem === 'US'
+                        ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white shadow-xs'
+                        : 'bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-300 border-gray-300 dark:border-neutral-700 hover:border-black dark:hover:border-white'
+                    }`}
+                  >
+                    US
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setUnitSystem('M')}
+                    className={`px-2 py-0.5 rounded-sm text-xs font-bold border transition-all ${
+                      unitSystem === 'M'
+                        ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white shadow-xs'
+                        : 'bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-300 border-gray-300 dark:border-neutral-700 hover:border-black dark:hover:border-white'
+                    }`}
+                  >
+                    M
+                  </button>
+                </div>
+              </div>
+
+              {/* SCALE: [ 1/2x ] [ 1x ] [ 2x ] */}
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] font-bold tracking-wider text-gray-400 dark:text-neutral-500 uppercase">
+                  {language === 'bn' ? 'স্কেল' : 'SCALE'}
+                </span>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setServings(halfScaleServings)}
+                    className={`px-2 py-0.5 rounded-sm text-xs font-bold border transition-all ${
+                      servings === halfScaleServings
+                        ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white shadow-xs'
+                        : 'bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-300 border-gray-300 dark:border-neutral-700 hover:border-black dark:hover:border-white'
+                    }`}
+                  >
+                    1/2x
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setServings(fullScaleServings)}
+                    className={`px-2 py-0.5 rounded-sm text-xs font-bold border transition-all ${
+                      servings === fullScaleServings
+                        ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white shadow-xs'
+                        : 'bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-300 border-gray-300 dark:border-neutral-700 hover:border-black dark:hover:border-white'
+                    }`}
+                  >
+                    1x
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setServings(doubleScaleServings)}
+                    className={`px-2 py-0.5 rounded-sm text-xs font-bold border transition-all ${
+                      servings === doubleScaleServings
+                        ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white shadow-xs'
+                        : 'bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-300 border-gray-300 dark:border-neutral-700 hover:border-black dark:hover:border-white'
+                    }`}
+                  >
+                    2x
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="flex items-center gap-3 bg-white dark:bg-[#1C1C1A] border border-gray-200 dark:border-neutral-800 shadow-sm rounded-full px-3 py-1.5">
-            <button
-              onClick={() => setServings((s) => Math.max(1, s - 1))}
-              className="w-7 h-7 rounded-full bg-softgray dark:bg-neutral-800 flex items-center justify-center text-charcoal dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-700 transition"
-              title="Decrease servings"
-            >
-              <Minus size={14} />
-            </button>
-            <span className="text-xs font-bold w-24 text-center text-terracotta">
-              {toBengaliNumber(servings, language)} {servings === 1 ? (t.recipeDetail?.serving || 'serving') : (t.recipeDetail?.servings || 'servings')}
+          {/* Granular Portions Stepper */}
+          <div className="flex items-center justify-between pt-3 pb-1">
+            <span className="text-xs text-gray-400 dark:text-neutral-500 font-medium">
+              {language === 'bn'
+                ? `মূল পরিমাণ: ${toBengaliNumber(baseServings, language)} জন`
+                : `Base size: ${baseServings} servings`}
             </span>
-            <button
-              onClick={() => setServings((s) => Math.min(20, s + 1))}
-              className="w-7 h-7 rounded-full bg-softgray dark:bg-neutral-800 flex items-center justify-center text-charcoal dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-700 transition"
-              title="Increase servings"
-            >
-              <Plus size={14} />
-            </button>
+
+            <div className="flex items-center gap-2.5 bg-white dark:bg-[#1C1C1A] border border-gray-200 dark:border-neutral-800 shadow-xs rounded-full px-3 py-1">
+              <button
+                type="button"
+                onClick={() => setServings((s) => Math.max(1, s - 1))}
+                className="w-6 h-6 rounded-full bg-softgray dark:bg-neutral-800 flex items-center justify-center text-charcoal dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-700 transition"
+                title="Decrease servings"
+              >
+                <Minus size={12} />
+              </button>
+              <span className="text-xs font-bold text-terracotta min-w-[70px] text-center">
+                {toBengaliNumber(servings, language)} {servings === 1 ? (t.recipeDetail?.serving || 'serving') : (t.recipeDetail?.servings || 'servings')}
+              </span>
+              <button
+                type="button"
+                onClick={() => setServings((s) => Math.min(24, s + 1))}
+                className="w-6 h-6 rounded-full bg-softgray dark:bg-neutral-800 flex items-center justify-center text-charcoal dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-700 transition"
+                title="Increase servings"
+              >
+                <Plus size={12} />
+              </button>
+            </div>
           </div>
         </div>
 
         <IngredientScaler
           ingredients={recipe.ingredients || []}
-          baseServings={recipe.base_servings}
+          baseServings={baseServings}
           currentServings={servings}
+          unitSystem={unitSystem}
         />
 
         {/* Recipe Steps Preview */}

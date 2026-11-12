@@ -223,6 +223,10 @@ export const ingredientTranslations = {
 export const unitTranslations = {
   "g": "গ্রাম",
   "kg": "কেজি",
+  "lb": "পাউন্ড",
+  "lbs": "পাউন্ড",
+  "oz": "আউন্স",
+  "fl oz": "ফ্লুয়িড আউন্স",
   "piece": "টি",
   "pieces": "টি",
   "tbsp": "টেবিল চামচ",
@@ -232,12 +236,73 @@ export const unitTranslations = {
   "clove": "কোয়া",
   "cloves": "কোয়া",
   "ml": "মি.লি.",
+  "l": "লিটার",
   "stem": "টি",
   "can": "ক্যান",
   "slice": "টুকরো",
   "slices": "টুকরো",
   "pinch": "চিমটি"
 };
+
+/**
+ * Converts quantity and unit between Metric (M) and US Customary (US)
+ */
+export function convertQuantityAndUnit(quantity, unit, unitSystem = 'M') {
+  const q = parseFloat(quantity) || 0;
+  const u = (unit || '').toLowerCase().trim();
+
+  if (unitSystem === 'US') {
+    // Metric weight (g, kg) to US (oz, lb)
+    if (u === 'g' || u === 'gram' || u === 'grams') {
+      if (q >= 450) {
+        const lbs = q / 453.592;
+        const formatted = lbs >= 10 ? Math.round(lbs) : parseFloat(lbs.toFixed(1));
+        return { quantity: formatted, unit: 'lb' };
+      } else {
+        const oz = q / 28.3495;
+        const formatted = oz >= 10 ? Math.round(oz) : parseFloat(oz.toFixed(1));
+        return { quantity: formatted, unit: 'oz' };
+      }
+    }
+    if (u === 'kg') {
+      const lbs = (q * 1000) / 453.592;
+      return { quantity: parseFloat(lbs.toFixed(1)), unit: 'lb' };
+    }
+    // Metric volume (ml, l) to US (cups, fl oz)
+    if (u === 'ml') {
+      if (q >= 200) {
+        const cups = q / 240;
+        return { quantity: parseFloat(cups.toFixed(1)), unit: 'cup' };
+      } else {
+        const flOz = q / 29.5735;
+        return { quantity: parseFloat(flOz.toFixed(1)), unit: 'fl oz' };
+      }
+    }
+    if (u === 'l' || u === 'liter') {
+      const cups = (q * 1000) / 240;
+      return { quantity: parseFloat(cups.toFixed(1)), unit: 'cup' };
+    }
+  } else {
+    // US weight to Metric (g, kg)
+    if (u === 'oz') {
+      const g = q * 28.3495;
+      return { quantity: Math.round(g), unit: 'g' };
+    }
+    if (u === 'lb' || u === 'lbs') {
+      const g = q * 453.592;
+      return { quantity: Math.round(g), unit: 'g' };
+    }
+    // US liquid fl oz to Metric (ml)
+    if (u === 'fl oz') {
+      const ml = q * 29.5735;
+      return { quantity: Math.round(ml), unit: 'ml' };
+    }
+  }
+
+  // Count units and universal measures (tbsp, tsp, cup, piece, slice, etc.)
+  const formatted = q % 1 === 0 ? q : parseFloat(q.toFixed(1));
+  return { quantity: formatted, unit };
+}
 
 export const categoryTranslations = {
   "rice": {
