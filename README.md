@@ -1,6 +1,10 @@
 # 🍳 SizzleSpoon 2.0 (Mob-Infused)
 
-A premium, mobile-first recipe and meal-planning web application built with Node.js/Express, MySQL, React 18, Vite, Tailwind CSS, Lucide Icons, and React Three Fiber.
+A premium, responsive recipe and meal-planning web application built with Node.js/Express, MySQL, React 18, Vite, Tailwind CSS, and Lucide Icons.
+
+- 🌐 **Live Website**: [https://sizzlespooon.vercel.app](https://sizzlespooon.vercel.app)
+- 🐙 **GitHub Repository**: [https://github.com/mahi09-k/KM0927](https://github.com/mahi09-k/KM0927)
+- 🚀 **Real-time CI/CD**: Automatic deployment triggered on every `git push origin main`
 
 ---
 
