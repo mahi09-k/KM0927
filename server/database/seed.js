@@ -3,8 +3,9 @@ const pool = require('../config/db');
 const allRecipes = require('./allRecipes');
 
 async function seed() {
-  const conn = await pool.getConnection();
+  let conn;
   try {
+    conn = await pool.getConnection();
     console.log('🔄 Cleaning old database tables...');
     await conn.query('DELETE FROM grocery_checks');
     await conn.query('DELETE FROM meal_plans');
@@ -72,9 +73,12 @@ async function seed() {
     process.exit(0);
   } catch (err) {
     console.error('❌ Seed failed:', err.message);
+    if (err.code === 'ECONNREFUSED') {
+      console.error('👉 Make sure MySQL is running on port 3306 and server/.env credentials are correct.');
+    }
     process.exit(1);
   } finally {
-    conn.release();
+    if (conn) conn.release();
   }
 }
 

@@ -41,9 +41,9 @@ export default function RecipeCard({ recipe, isSavedDefault = false }) {
   return (
     <div
       onClick={() => navigate(`/recipe/${recipe.id}`)}
-      className="group relative rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 bg-white dark:bg-[#1C1C1A] border border-black/5 dark:border-white/5"
+      className="group relative rounded-3xl overflow-hidden cursor-pointer shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-[#1C1C1A] border border-black/5 dark:border-white/5 flex flex-col h-full"
     >
-      <div className="relative h-60 w-full overflow-hidden bg-softgray dark:bg-neutral-800">
+      <div className="relative h-56 sm:h-52 md:h-56 w-full overflow-hidden bg-softgray dark:bg-neutral-800 flex-shrink-0">
         <img
           src={recipe.thumbnail_url || 'https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800'}
           alt={recipe.title}

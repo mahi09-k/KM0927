@@ -65,17 +65,19 @@ export default function GroceryList() {
     );
 
   return (
-    <div className="px-5 mt-2 space-y-4">
+    <div className="px-4 sm:px-6 lg:px-8 mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
       {departments.map((dept) => {
         const deptLabel = t.grocery.departments[dept] || dept;
         return (
-          <div key={dept} className="bg-white rounded-3xl p-4 shadow-sm border border-gray-100">
-            <h3 className="font-display font-bold text-charcoal mb-2 flex items-center gap-2 text-base">
-              <span>{DEPT_ICONS[dept] || '🛍️'}</span> {deptLabel}
+          <div key={dept} className="bg-white dark:bg-[#1C1C1A] rounded-3xl p-5 shadow-xs border border-black/5 dark:border-white/5 transition-colors">
+            <h3 className="font-display font-bold text-charcoal dark:text-white mb-3 flex items-center gap-2 text-base">
+              <span className="text-xl">{DEPT_ICONS[dept] || '🛍️'}</span> {deptLabel}
             </h3>
-            {grouped[dept].map((item) => (
-              <GroceryItem key={item.item_key} item={item} onToggle={handleToggle} />
-            ))}
+            <div className="space-y-2">
+              {grouped[dept].map((item) => (
+                <GroceryItem key={item.item_key} item={item} onToggle={handleToggle} />
+              ))}
+            </div>
           </div>
         );
       })}

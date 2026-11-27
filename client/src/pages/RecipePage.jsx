@@ -22,10 +22,10 @@ export default function RecipePage() {
   }, [id]);
 
   return (
-    <div>
+    <div className="relative">
       <button
         onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 z-30 p-2.5 bg-white/95 dark:bg-[#1C1C1A]/95 backdrop-blur rounded-full shadow-md text-charcoal dark:text-neutral-200 hover:bg-white dark:hover:bg-neutral-800 transition"
+        className="fixed sm:absolute top-4 sm:top-6 left-4 sm:left-6 md:left-10 lg:left-12 z-30 p-2.5 sm:p-3 bg-white/95 dark:bg-[#1C1C1A]/95 backdrop-blur rounded-full shadow-lg text-charcoal dark:text-neutral-200 hover:bg-white dark:hover:bg-neutral-800 hover:scale-105 active:scale-95 transition"
         title={t.recipeDetail.back}
       >
         <ArrowLeft size={18} />

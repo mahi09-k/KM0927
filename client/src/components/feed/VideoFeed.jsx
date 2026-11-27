@@ -53,8 +53,8 @@ export default function VideoFeed() {
   return (
     <div>
       {/* Modern Search Bar */}
-      <div className="px-5 mb-3.5">
-        <div className="relative flex items-center">
+      <div className="px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="relative flex items-center max-w-2xl">
           <Search
             className="absolute left-4 text-gray-400 dark:text-neutral-500 pointer-events-none"
             size={18}
@@ -64,7 +64,7 @@ export default function VideoFeed() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t.filters?.searchPlaceholder || 'Search 150+ recipes, cuisines, or ingredients...'}
-            className="w-full pl-11 pr-10 py-3 rounded-2xl bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-100 placeholder-gray-400 dark:placeholder-neutral-500 border border-black/5 dark:border-white/5 shadow-xs focus:outline-none focus:ring-2 focus:ring-terracotta text-sm transition"
+            className="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-100 placeholder-gray-400 dark:placeholder-neutral-500 border border-black/5 dark:border-white/5 shadow-xs focus:outline-none focus:ring-2 focus:ring-terracotta text-sm transition"
           />
           {searchQuery && (
             <button
@@ -80,7 +80,7 @@ export default function VideoFeed() {
 
       <FilterBar active={activeFilter} onSelect={setActiveFilter} />
 
-      <div className="px-5 py-2 flex items-center justify-between text-xs text-gray-500 dark:text-neutral-400 font-medium">
+      <div className="px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between text-xs text-gray-500 dark:text-neutral-400 font-medium">
         <span>
           {t.filters.showing} {toBengaliNumber(filteredRecipes.length, language)} {t.filters.recipes}
           {searchQuery && (
@@ -102,20 +102,20 @@ export default function VideoFeed() {
         )}
       </div>
 
-      <div className="px-5 mt-2 grid grid-cols-1 gap-5">
+      <div className="px-4 sm:px-6 lg:px-8 mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {loading ? (
-          Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} className="h-72 rounded-3xl bg-softgray dark:bg-neutral-800 animate-pulse" />
+          Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="h-80 rounded-3xl bg-softgray dark:bg-neutral-800 animate-pulse" />
           ))
         ) : filteredRecipes.length === 0 ? (
-          <div className="text-center py-16 text-gray-400 dark:text-neutral-500">
-            <p className="text-4xl mb-2">🍽️</p>
-            <p className="font-semibold text-charcoal dark:text-neutral-200">{t.filters.noRecipes}</p>
+          <div className="col-span-full text-center py-20 text-gray-400 dark:text-neutral-500">
+            <p className="text-5xl mb-3">🍽️</p>
+            <p className="font-semibold text-charcoal dark:text-neutral-200 text-lg">{t.filters.noRecipes}</p>
             <p className="text-xs text-gray-400 dark:text-neutral-500 mt-1">{t.filters.tryAnother}</p>
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="mt-4 px-4 py-2 rounded-full bg-terracotta text-white text-xs font-semibold hover:bg-orange-700 transition"
+                className="mt-4 px-5 py-2.5 rounded-full bg-terracotta text-white text-xs font-semibold hover:bg-orange-700 transition shadow-sm"
               >
                 {t.filters?.clearSearch || 'Clear search'}
               </button>

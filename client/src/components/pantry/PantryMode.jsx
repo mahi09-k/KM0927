@@ -113,8 +113,8 @@ export default function PantryMode({ onSearch }) {
   const currentList = CUISINE_PANTRY_DATA[activeTab] || CUISINE_PANTRY_DATA.all;
 
   return (
-    <div className="px-5 mt-2 pb-10">
-      <p className="text-xs sm:text-sm text-gray-500 mb-4 leading-relaxed">
+    <div className="w-full pb-8">
+      <p className="text-xs sm:text-sm text-gray-500 dark:text-neutral-400 mb-4 leading-relaxed">
         {t.pantry.instructions}
       </p>
 
@@ -125,11 +125,12 @@ export default function PantryMode({ onSearch }) {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleCustomAdd()}
           placeholder={t.pantry.placeholder}
-          className="flex-1 px-4 py-2.5 rounded-2xl border border-gray-200 text-xs sm:text-sm focus:outline-none focus:border-terracotta bg-white shadow-sm"
+          className="flex-1 px-4 py-3 rounded-2xl border border-black/5 dark:border-white/5 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-terracotta bg-white dark:bg-[#1C1C1A] text-charcoal dark:text-neutral-100 shadow-xs placeholder-gray-400 dark:placeholder-neutral-500"
         />
         <button
           onClick={handleCustomAdd}
-          className="p-3 bg-terracotta text-white rounded-2xl shadow hover:bg-orange-700 transition"
+          className="p-3 bg-terracotta text-white rounded-2xl shadow-sm hover:bg-orange-700 transition active:scale-95"
+          title="Add ingredient"
         >
           <Plus size={18} />
         </button>
@@ -143,8 +144,8 @@ export default function PantryMode({ onSearch }) {
             onClick={() => setActiveTab(tab.id)}
             className={`flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all border ${
               activeTab === tab.id
-                ? 'bg-charcoal text-white border-charcoal shadow-sm'
-                : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
+                ? 'bg-charcoal dark:bg-white text-white dark:text-charcoal border-charcoal dark:border-white shadow-xs'
+                : 'bg-white dark:bg-[#1C1C1A] text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-800 hover:border-gray-300'
             }`}
           >
             {tab.label}
@@ -153,7 +154,7 @@ export default function PantryMode({ onSearch }) {
       </div>
 
       {/* Ingredients Chips for Active Cuisine */}
-      <div className="flex flex-wrap gap-2 mb-5 min-h-[120px] p-3.5 bg-white rounded-3xl border border-gray-100 shadow-sm">
+      <div className="flex flex-wrap gap-2 mb-5 min-h-[120px] p-4 bg-white dark:bg-[#1C1C1A] rounded-3xl border border-black/5 dark:border-white/5 shadow-xs">
         {currentList.map((ing) => {
           const isSelected = selectedIngredients.includes(ing.key);
           const label = language === 'bn' ? ing.bn : ing.en;
@@ -163,8 +164,8 @@ export default function PantryMode({ onSearch }) {
               onClick={() => (isSelected ? removeIngredient(ing.key) : addIngredient(ing.key))}
               className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                 isSelected
-                  ? 'bg-terracotta text-white border-terracotta shadow-sm scale-105'
-                  : 'bg-softgray border-gray-200 text-charcoal hover:border-terracotta/40'
+                  ? 'bg-terracotta text-white border-terracotta shadow-xs scale-105'
+                  : 'bg-softgray dark:bg-neutral-800 border-black/5 dark:border-white/5 text-charcoal dark:text-neutral-200 hover:border-terracotta/40'
               }`}
             >
               {label}
@@ -175,9 +176,9 @@ export default function PantryMode({ onSearch }) {
 
       {/* Selected Ingredients Drawer */}
       {selectedIngredients.length > 0 && (
-        <div className="bg-white border border-gray-100 shadow-sm rounded-3xl p-4 mb-5">
+        <div className="bg-white dark:bg-[#1C1C1A] border border-black/5 dark:border-white/5 shadow-xs rounded-3xl p-4 mb-5">
           <div className="flex justify-between items-center mb-2.5">
-            <span className="text-xs font-bold text-charcoal flex items-center gap-1.5">
+            <span className="text-xs font-bold text-charcoal dark:text-white flex items-center gap-1.5">
               <Sparkles size={14} className="text-terracotta" />
               {t.pantry.selected} ({toBengaliNumber(selectedIngredients.length, language)})
             </span>
@@ -192,7 +193,7 @@ export default function PantryMode({ onSearch }) {
             {selectedIngredients.map((ing) => (
               <span
                 key={ing}
-                className="flex items-center gap-1.5 bg-softgray text-charcoal text-xs font-semibold px-3 py-1 rounded-full border border-gray-200"
+                className="flex items-center gap-1.5 bg-softgray dark:bg-neutral-800 text-charcoal dark:text-neutral-200 text-xs font-semibold px-3 py-1 rounded-full border border-black/5 dark:border-white/5"
               >
                 {ing}
                 <button
@@ -208,8 +209,8 @@ export default function PantryMode({ onSearch }) {
       )}
 
       {/* Target Cuisine Selector */}
-      <div className="mb-5 bg-white p-3.5 rounded-3xl border border-gray-100 shadow-sm">
-        <label className="block text-xs font-bold text-charcoal mb-2">
+      <div className="mb-5 bg-white dark:bg-[#1C1C1A] p-4 rounded-3xl border border-black/5 dark:border-white/5 shadow-xs">
+        <label className="block text-xs font-bold text-charcoal dark:text-white mb-2.5">
           {t.pantry.targetLabel}
         </label>
         <div className="grid grid-cols-2 gap-2">
@@ -217,10 +218,10 @@ export default function PantryMode({ onSearch }) {
             <button
               key={opt.id}
               onClick={() => setTargetCuisine(opt.id)}
-              className={`px-3 py-2 rounded-xl text-xs font-semibold transition-all border text-left flex items-center justify-between ${
+              className={`px-3 py-2.5 rounded-xl text-xs font-semibold transition-all border text-left flex items-center justify-between ${
                 targetCuisine === opt.id
-                  ? 'bg-terracotta/10 text-terracotta border-terracotta font-bold'
-                  : 'bg-softgray border-gray-200 text-gray-600 hover:border-gray-300'
+                  ? 'bg-terracotta/10 text-terracotta border-terracotta dark:bg-terracotta/20 dark:text-orange-400 font-bold'
+                  : 'bg-softgray dark:bg-neutral-800 border-black/5 dark:border-white/5 text-gray-600 dark:text-neutral-300 hover:border-gray-300'
               }`}
             >
               <span>{opt.label}</span>

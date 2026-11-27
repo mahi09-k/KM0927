@@ -20,7 +20,7 @@ export default function FilterBar({ active, onSelect }) {
   ];
 
   return (
-    <div className="flex gap-2 overflow-x-auto scrollbar-hide px-5 pb-2">
+    <div className="flex gap-2 overflow-x-auto md:flex-wrap scrollbar-hide px-4 sm:px-6 lg:px-8 pb-3">
       {filters.map((f) => {
         const isSelected = active.type === f.type && active.value === f.value;
         return (

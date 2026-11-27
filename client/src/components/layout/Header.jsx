@@ -12,19 +12,19 @@ export default function Header({ title, subtitle, showLang = true, showProfileSh
   const { language } = useLanguageStore();
 
   return (
-    <header className="px-5 pt-8 pb-3">
-      <div className="flex items-start justify-between gap-3">
+    <header className="px-4 sm:px-6 lg:px-8 pt-5 md:pt-8 pb-4">
+      <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
-          <h1 className="font-display text-3xl font-bold text-charcoal dark:text-white leading-tight tracking-tight">
+          <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-charcoal dark:text-white leading-tight tracking-tight">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-xs sm:text-sm text-gray-500 dark:text-neutral-400 mt-1 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-neutral-400 mt-1.5 leading-relaxed max-w-3xl">
               {subtitle}
             </p>
           )}
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0 pt-1">
+        <div className="flex md:hidden items-center gap-2 flex-shrink-0 pt-1">
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"

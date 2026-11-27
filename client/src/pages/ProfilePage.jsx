@@ -121,9 +121,9 @@ export default function ProfilePage() {
         showLang={true}
       />
 
-      <div className="px-5 pb-8 space-y-4">
+      <div className="px-4 sm:px-6 lg:px-8 pb-10 max-w-4xl mx-auto w-full space-y-6">
         {/* Navigation Tabs Bar */}
-        <div className="bg-white/80 dark:bg-[#1C1C1A]/80 backdrop-blur p-1 rounded-2xl border border-black/5 dark:border-white/5 flex gap-1 shadow-sm sticky top-2 z-20">
+        <div className="bg-white/80 dark:bg-[#1C1C1A]/80 backdrop-blur p-1.5 rounded-2xl border border-black/5 dark:border-white/5 flex gap-1.5 shadow-xs sticky top-20 z-20">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isCurrent = activeTab === tab.id;
@@ -132,14 +132,14 @@ export default function ProfilePage() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 py-2.5 px-2 rounded-xl text-xs font-semibold flex flex-col items-center justify-center gap-1 transition-all ${
+                className={`flex-1 py-3 px-3 rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all ${
                   isCurrent
-                    ? 'bg-terracotta text-white shadow-md shadow-terracotta/20 scale-[1.02]'
+                    ? 'bg-terracotta text-white shadow-md shadow-terracotta/20 scale-[1.01]'
                     : 'text-gray-500 dark:text-neutral-400 hover:text-charcoal dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'
                 }`}
               >
                 <Icon size={16} />
-                <span className="text-[11px] leading-none line-clamp-1">{tab.label}</span>
+                <span className="leading-none line-clamp-1">{tab.label}</span>
               </button>
             );
           })}

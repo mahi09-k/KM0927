@@ -7,7 +7,7 @@ A premium, mobile-first recipe and meal-planning web application built with Node
 ## 🏗️ Architecture Overview
 
 ```
-d:\KAYUM\sizzlespoon\
+e:\KAYUM\sizzlespoon\
 │
 ├── 📁 server/                              # Node.js + Express Backend (Port 5001)
 │   ├── 📁 config/
@@ -77,21 +77,27 @@ Import `server/database/init.sql` into MySQL:
 
 ## 🚀 Quick Start Guide
 
-### 1. Database Setup
+### 0. Install Dependencies
+```bash
+.\install.bat
+# or: npm run build
+```
+
+### 1. Database Setup (Optional - Server has built-in in-memory fallback!)
 Make sure your MySQL service is running, create the database, and run the seeder:
 ```bash
 # In MySQL Workbench, phpMyAdmin, or mysql CLI:
 # Import server/database/init.sql
 
-# Seed 3 realistic recipes (Creamy Tuscan Pasta, Honey Garlic Salmon, Shakshuka):
+# Seed recipes (Bangladeshi, Indian, and Western):
 .\seed-db.bat
-# or: agy-node server/database/seed.js
+# or: node server/database/seed.js
 ```
 
 ### 2. Start the Backend (Port 5001)
 ```bash
 .\start-server.bat
-# or: agy-node server/index.js
+# or: node server/index.js
 ```
 
 ### 3. Start the Frontend (Port 5173)
