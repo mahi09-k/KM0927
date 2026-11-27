@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import MobileShell from './components/layout/MobileShell';
 import BottomNav from './components/layout/BottomNav';
 import HomePage from './pages/HomePage';

@@ -1,5 +1,19 @@
 import axios from 'axios';
 import { useAuthStore } from '../store/authStore';
+import {
+  mockGetRecipes,
+  mockGetRecipeById,
+  mockPantryMatch,
+  mockGetMealPlan,
+  mockAddMealPlan,
+  mockRemoveMealPlan,
+  mockGetGroceryList,
+  mockToggleGroceryCheck,
+  mockGetUserProfile,
+  mockUpdateUserProfile,
+  mockToggleSaveRecipe,
+  mockGetSavedRecipes,
+} from './clientMockStore';
 
 const api = axios.create({ baseURL: '/api' });
 
@@ -20,31 +34,80 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+// Helper wrapper for graceful fallback on static / offline deployments
+const withFallback = async (apiCall, fallbackFn) => {
+  try {
+    const res = await apiCall();
+    if (res && res.data) return res;
+    return fallbackFn();
+  } catch (err) {
+    // If backend is offline, 404, or network error, gracefully use client-side store
+    return fallbackFn();
+  }
+};
+
 // Auth
-export const loginUser = (email, password) => api.post('/users/login', { email, password });
-export const signupUser = (data) => api.post('/users/signup', data);
-export const fetchAccounts = () => api.get('/users/accounts');
+export const loginUser = (email, password) =>
+  withFallback(() => api.post('/users/login', { email, password }), () => ({
+    data: { user: { id: 1, name: email.split('@')[0], email }, token: 'mock-jwt-token' },
+  }));
+
+export const signupUser = (data) =>
+  withFallback(() => api.post('/users/signup', data), () => ({
+    data: { user: { id: 1, name: data.name, email: data.email }, token: 'mock-jwt-token' },
+  }));
+
+export const fetchAccounts = () =>
+  withFallback(() => api.get('/users/accounts'), () => ({ data: [] }));
 
 // Recipes
-export const fetchRecipes = (params) => api.get('/recipes', { params });
-export const fetchRecipeById = (id) => api.get(`/recipes/${id}`);
+export const fetchRecipes = (params) =>
+  withFallback(() => api.get('/recipes', { params }), () => mockGetRecipes(params));
+
+export const fetchRecipeById = (id) =>
+  withFallback(() => api.get(`/recipes/${id}`), () => mockGetRecipeById(id));
+
 export const pantryMatch = (ingredients, cuisine) =>
-  api.post('/recipes/pantry-match', { ingredients, cuisine });
+  withFallback(
+    () => api.post('/recipes/pantry-match', { ingredients, cuisine }),
+    () => mockPantryMatch(ingredients, cuisine)
+  );
 
 // Meal Plans
-export const fetchMealPlan = (week) => api.get('/meal-plans', { params: { week } });
-export const addMealPlan = (data) => api.post('/meal-plans', data);
-export const removeMealPlan = (id) => api.delete(`/meal-plans/${id}`);
+export const fetchMealPlan = (week) =>
+  withFallback(() => api.get('/meal-plans', { params: { week } }), () => mockGetMealPlan(week));
+
+export const addMealPlan = (data) =>
+  withFallback(() => api.post('/meal-plans', data), () => mockAddMealPlan(data));
+
+export const removeMealPlan = (id) =>
+  withFallback(() => api.delete(`/meal-plans/${id}`), () => mockRemoveMealPlan(id));
 
 // Grocery
-export const fetchGroceryList = (week) => api.get('/grocery', { params: { week } });
+export const fetchGroceryList = (week) =>
+  withFallback(() => api.get('/grocery', { params: { week } }), () => mockGetGroceryList(week));
+
 export const toggleGroceryCheck = (item_key, is_checked) =>
-  api.post('/grocery/check', { item_key, is_checked });
+  withFallback(
+    () => api.post('/grocery/check', { item_key, is_checked }),
+    () => mockToggleGroceryCheck(item_key, is_checked)
+  );
 
 // User Profile & Preferences
-export const fetchUserProfile = () => api.get('/users/profile');
-export const updateUserProfile = (data) => api.put('/users/profile', data);
-export const updateUserPreferences = (data) => api.put('/users/preferences', data);
-export const updateUserPassword = (data) => api.put('/users/password', data);
-export const toggleSaveRecipe = (recipeId) => api.post(`/users/saved-recipes/${recipeId}`);
-export const fetchSavedRecipes = () => api.get('/users/saved-recipes');
+export const fetchUserProfile = () =>
+  withFallback(() => api.get('/users/profile'), () => mockGetUserProfile());
+
+export const updateUserProfile = (data) =>
+  withFallback(() => api.put('/users/profile', data), () => mockUpdateUserProfile(data));
+
+export const updateUserPreferences = (data) =>
+  withFallback(() => api.put('/users/preferences', data), () => ({ data: { success: true } }));
+
+export const updateUserPassword = (data) =>
+  withFallback(() => api.put('/users/password', data), () => ({ data: { success: true } }));
+
+export const toggleSaveRecipe = (recipeId) =>
+  withFallback(() => api.post(`/users/saved-recipes/${recipeId}`), () => mockToggleSaveRecipe(recipeId));
+
+export const fetchSavedRecipes = () =>
+  withFallback(() => api.get('/users/saved-recipes'), () => mockGetSavedRecipes());
